@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>accountDescription</key>
+		<string>type 1(username 1)</string>
+		<key>username</key>
+		<string>username 1</string>
+		<key>email</key>
+		<string>test1@test1.com</string>
+		<key>phoneNumber</key>
+		<string>+972597105861</string>
+		<key>password</key>
+		<string>123456</string>
+		<key>other</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>accountDescription</key>
+		<string>type 2(username 2)</string>
+		<key>username</key>
+		<string>username 2</string>
+		<key>email</key>
+		<string>test2@test2.com</string>
+		<key>phoneNumber</key>
+		<string>+972597105866</string>
+		<key>password</key>
+		<string>123456</string>
+		<key>other</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>accountDescription</key>
+		<string>type 3(username 3)</string>
+		<key>username</key>
+		<string>username 3</string>
+		<key>email</key>
+		<string>test3@test3.com</string>
+		<key>phoneNumber</key>
+		<string>+972599953505</string>
+		<key>password</key>
+		<string>123456</string>
+		<key>other</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>accountDescription</key>
+		<string>type 4(username 4)</string>
+		<key>username</key>
+		<string>username 4</string>
+		<key>email</key>
+		<string>test4@test4.com</string>
+		<key>phoneNumber</key>
+		<string>+972599953503</string>
+		<key>password</key>
+		<string>123456</string>
+		<key>other</key>
+		<string></string>
+	</dict>
+</array>
+</plist>
