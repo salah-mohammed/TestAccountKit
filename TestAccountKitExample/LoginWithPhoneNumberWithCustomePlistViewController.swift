@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  LoginWithPhoneNumberViewController.swift
 //  TestAccountKitExample
 //
 //  Created by Salah on 7/27/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 import TestAccountKit
-class LoginWithPhoneNumberViewController: UIViewController {
+class LoginWithPhoneNumberWithCustomePlistViewController: UIViewController {
     @IBOutlet weak var txtPhoneNumber: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     
@@ -22,7 +22,7 @@ class LoginWithPhoneNumberViewController: UIViewController {
     @IBAction func btnLogin(_ sender: Any) {
            #if DEBUG
                if (self.txtPhoneNumber.text ?? "").count == 0 {
-                TestAccountManager.shared.development.show({ (item) -> String in
+                TestAccountList.init(.plistStringURL(Bundle.main.path(forResource:"CustomTestAccountListDevelopment", ofType: "plist")!)).show({ (item) -> String in
                     return "(\(item.accountDescription ?? "")) \(item.phoneNumber ?? "")"
                 }, selectedObject:  { object in
                                self.txtPhoneNumber.text = object.phoneNumber ?? "";

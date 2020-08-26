@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>accountDescription</key>
-		<string>type 1(username 1)</string>
+		<string>type 1</string>
 		<key>username</key>
 		<string>username 1</string>
 		<key>email</key>
@@ -18,7 +18,7 @@
 	</dict>
 	<dict>
 		<key>accountDescription</key>
-		<string>type 2(username 2)</string>
+		<string>type 2</string>
 		<key>username</key>
 		<string>username 2</string>
 		<key>email</key>
@@ -32,7 +32,7 @@
 	</dict>
 	<dict>
 		<key>accountDescription</key>
-		<string>type 3(username 3)</string>
+		<string>type 3</string>
 		<key>username</key>
 		<string>username 3</string>
 		<key>email</key>
@@ -46,7 +46,7 @@
 	</dict>
 	<dict>
 		<key>accountDescription</key>
-		<string>type 4(username 4)</string>
+		<string>type 4</string>
 		<key>username</key>
 		<string>username 4</string>
 		<key>email</key>

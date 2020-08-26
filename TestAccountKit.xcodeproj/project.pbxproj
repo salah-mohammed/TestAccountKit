@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E6ECD7F24F6887700225EBE /* TestAccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF3337A24CEDFB500A547FD /* TestAccountKit.framework */; };
+		4E6ECD8024F6887700225EBE /* TestAccountKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF3337A24CEDFB500A547FD /* TestAccountKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4E6ECD8824F68A9E00225EBE /* CustomTestAccountListProducation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8424F68A9E00225EBE /* CustomTestAccountListProducation.plist */; };
+		4E6ECD8B24F68A9E00225EBE /* CustomTestAccountListDevelopment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8724F68A9E00225EBE /* CustomTestAccountListDevelopment.plist */; };
+		4E6ECD8D24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8C24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift */; };
+		4E6ECD8F24F692B800225EBE /* LoginWithPhoneNumberWithCustomePlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8E24F692B800225EBE /* LoginWithPhoneNumberWithCustomePlistViewController.swift */; };
 		4EF3337F24CEDFB500A547FD /* TestAccountKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EF3337D24CEDFB500A547FD /* TestAccountKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EF3338C24CEDFE000A547FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3338B24CEDFE000A547FD /* AppDelegate.swift */; };
 		4EF3338E24CEDFE000A547FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3338D24CEDFE000A547FD /* SceneDelegate.swift */; };
@@ -23,7 +29,35 @@
 		4EF333B324CEF46A00A547FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF333B124CEF46900A547FD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4E6ECD8124F6887700225EBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF3337124CEDFB500A547FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EF3337924CEDFB500A547FD;
+			remoteInfo = TestAccountKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4E6ECD8324F6887700225EBE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4E6ECD8024F6887700225EBE /* TestAccountKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4E6ECD8424F68A9E00225EBE /* CustomTestAccountListProducation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTestAccountListProducation.plist; sourceTree = "<group>"; };
+		4E6ECD8724F68A9E00225EBE /* CustomTestAccountListDevelopment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTestAccountListDevelopment.plist; sourceTree = "<group>"; };
+		4E6ECD8C24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithUserNameWithCustomePlistViewController.swift; sourceTree = "<group>"; };
+		4E6ECD8E24F692B800225EBE /* LoginWithPhoneNumberWithCustomePlistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWithPhoneNumberWithCustomePlistViewController.swift; sourceTree = "<group>"; };
 		4EF3337A24CEDFB500A547FD /* TestAccountKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestAccountKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF3337D24CEDFB500A547FD /* TestAccountKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAccountKit.h; sourceTree = "<group>"; };
 		4EF3337E24CEDFB500A547FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,18 +90,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6ECD7F24F6887700225EBE /* TestAccountKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E6ECD7E24F6887700225EBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4EF3337024CEDFB500A547FD = {
 			isa = PBXGroup;
 			children = (
 				4EF3337C24CEDFB500A547FD /* TestAccountKit */,
 				4EF3338A24CEDFE000A547FD /* TestAccountKitExample */,
 				4EF3337B24CEDFB500A547FD /* Products */,
+				4E6ECD7E24F6887700225EBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +143,8 @@
 				4EF3338F24CEDFE000A547FD /* LoginWithUserNameViewController.swift */,
 				4EF333A824CEE3FA00A547FD /* LoginWithPhoneNumberViewController.swift */,
 				4EF333AF24CEF2C700A547FD /* LoginWithEmailViewController.swift */,
+				4E6ECD8C24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift */,
+				4E6ECD8E24F692B800225EBE /* LoginWithPhoneNumberWithCustomePlistViewController.swift */,
 				4EF333B124CEF46900A547FD /* Main.storyboard */,
 				4EF333A324CEE0D400A547FD /* Plist */,
 				4EF3339424CEDFE200A547FD /* Assets.xcassets */,
@@ -114,6 +159,8 @@
 			children = (
 				4EF333A424CEE0D400A547FD /* TestAccountListDevelopment.plist */,
 				4EF333A524CEE0D400A547FD /* TestAccountListProducation.plist */,
+				4E6ECD8724F68A9E00225EBE /* CustomTestAccountListDevelopment.plist */,
+				4E6ECD8424F68A9E00225EBE /* CustomTestAccountListProducation.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -157,10 +204,12 @@
 				4EF3338524CEDFE000A547FD /* Sources */,
 				4EF3338624CEDFE000A547FD /* Frameworks */,
 				4EF3338724CEDFE000A547FD /* Resources */,
+				4E6ECD8324F6887700225EBE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4E6ECD8224F6887700225EBE /* PBXTargetDependency */,
 			);
 			name = TestAccountKitExample;
 			productName = TestAccountKitExample;
@@ -221,7 +270,9 @@
 				4EF333A724CEE0D400A547FD /* TestAccountListProducation.plist in Resources */,
 				4EF333B324CEF46A00A547FD /* Main.storyboard in Resources */,
 				4EF3339824CEDFE200A547FD /* LaunchScreen.storyboard in Resources */,
+				4E6ECD8824F68A9E00225EBE /* CustomTestAccountListProducation.plist in Resources */,
 				4EF3339524CEDFE200A547FD /* Assets.xcassets in Resources */,
+				4E6ECD8B24F68A9E00225EBE /* CustomTestAccountListDevelopment.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,13 +295,23 @@
 			files = (
 				4EF3339024CEDFE000A547FD /* LoginWithUserNameViewController.swift in Sources */,
 				4EF3338C24CEDFE000A547FD /* AppDelegate.swift in Sources */,
+				4E6ECD8D24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift in Sources */,
 				4EF333B024CEF2C700A547FD /* LoginWithEmailViewController.swift in Sources */,
+				4E6ECD8F24F692B800225EBE /* LoginWithPhoneNumberWithCustomePlistViewController.swift in Sources */,
 				4EF333A924CEE3FA00A547FD /* LoginWithPhoneNumberViewController.swift in Sources */,
 				4EF3338E24CEDFE000A547FD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E6ECD8224F6887700225EBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EF3337924CEDFB500A547FD /* TestAccountKit */;
+			targetProxy = 4E6ECD8124F6887700225EBE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4EF3339624CEDFE200A547FD /* LaunchScreen.storyboard */ = {

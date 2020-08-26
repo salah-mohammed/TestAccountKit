@@ -12,10 +12,10 @@ import UIKit
 
 public class TestAccountList: NSObject {
     public enum AccountType{
-    case development
-    case producation
-    case customName(String)
-    case stringURL(String)
+    case development // You should set plist with this name "TestAccountListDevelopment.plist"
+    case producation // You should set plist with this name "TestAccountListProducation.plist"
+    case plistName(String) // plist name only with any extension
+    case plistStringURL(String)
 
     var stringURL:String?{
             switch self {
@@ -23,9 +23,9 @@ public class TestAccountList: NSObject {
                 return TestAccountList.toStringURL(plistName:"TestAccountListDevelopment");
             case .producation:
                 return TestAccountList.toStringURL(plistName:"TestAccountListProducation");
-            case .customName(let plistName):
+            case .plistName(let plistName):
                 return TestAccountList.toStringURL(plistName:plistName);
-            case .stringURL(let url):
+            case .plistStringURL(let url):
                 return url;
             }
             return nil;
@@ -51,10 +51,10 @@ public class TestAccountList: NSObject {
         super.init()
         self.accountType=accountType;
     }
-     public func show(selectedObject:@escaping (TestAccountObject)->Void){
+    public func show(_ title:((TestAccountObject)->String)? = nil,selectedObject:@escaping (TestAccountObject)->Void){
         let alertViewController:UIAlertController = UIAlertController.init(title:"", message:"", preferredStyle: UIAlertController.Style.actionSheet);
         for object in self.fetch() ?? []{
-            alertViewController.addAction(UIAlertAction.init(title:"\(object.accountDescription ?? "") \(object.email ?? "")", style: .default, handler: { (action) in
+            alertViewController.addAction(UIAlertAction.init(title:title?(object) ?? "(\(object.accountDescription ?? "")) \(object.email ?? "")", style: .default, handler: { (action) in
                 selectedObject(object);
             }))
         }

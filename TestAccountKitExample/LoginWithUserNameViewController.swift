@@ -23,11 +23,14 @@ class LoginWithUserNameViewController: UIViewController {
     @IBAction func btnLogin(_ sender: Any) {
            #if DEBUG
                if (self.txtUserName.text ?? "").count == 0 {
-               TestAccountManager.shared.development.show(selectedObject: { object in
-                self.txtUserName.text=object.username
-                self.txtPassword.text=object.password
-               self.login()
-           } )
+                TestAccountManager.shared.development.show({ (item) -> String in
+                    return "(\(item.accountDescription ?? "")) \(item.username ?? "")"
+                }, selectedObject: { object in
+        self.txtUserName.text=object.username
+        self.txtPassword.text=object.password
+
+                     self.login()
+                } )
            }else{
                self.login()
            }
