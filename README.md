@@ -4,13 +4,12 @@
 
 # NavigationKit
 
-Navigation Kit used for make threat with screen that have differents navigation bar style, make change style of bar easy.
+TestAccountKit used for manage your accounts that used for login to your system .
 # Advantages
-* set Background Image for navigation bar and title color for every single screen.
-* set color for navigation bar and their title for every single screen.
-* Hide navigation bar feature for every single screen.
-* can make navigation bar color transparent for every single screen.
-* can set default navigation bar style if Viewcontroller not implement NavigationDelegate will take this default style.
+* Don't write your your account in login screen to enter to your system, you can choose it from saved list.
+* Our System can dealing with systems that have username to login or phone number or email to login.
+* Configuration is too easy.
+
 
 # How used (configuration): 
 # Pod install
