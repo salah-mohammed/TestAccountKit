@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E6ECD7F24F6887700225EBE /* TestAccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF3337A24CEDFB500A547FD /* TestAccountKit.framework */; };
-		4E6ECD8024F6887700225EBE /* TestAccountKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF3337A24CEDFB500A547FD /* TestAccountKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4E6ECD8824F68A9E00225EBE /* CustomTestAccountListProducation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8424F68A9E00225EBE /* CustomTestAccountListProducation.plist */; };
 		4E6ECD8B24F68A9E00225EBE /* CustomTestAccountListDevelopment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8724F68A9E00225EBE /* CustomTestAccountListDevelopment.plist */; };
 		4E6ECD8D24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8C24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift */; };
@@ -29,30 +27,6 @@
 		4EF333B324CEF46A00A547FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF333B124CEF46900A547FD /* Main.storyboard */; };
 		EEA3512AE4192FCA6A87DC21 /* Pods_TestAccountKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8059A222844CE900DC71BAC0 /* Pods_TestAccountKitExample.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4E6ECD8124F6887700225EBE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4EF3337124CEDFB500A547FD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4EF3337924CEDFB500A547FD;
-			remoteInfo = TestAccountKit;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		4E6ECD8324F6887700225EBE /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				4E6ECD8024F6887700225EBE /* TestAccountKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4E6ECD8424F68A9E00225EBE /* CustomTestAccountListProducation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTestAccountListProducation.plist; sourceTree = "<group>"; };
@@ -94,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E6ECD7F24F6887700225EBE /* TestAccountKit.framework in Frameworks */,
 				EEA3512AE4192FCA6A87DC21 /* Pods_TestAccountKitExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,13 +202,11 @@
 				4EF3338524CEDFE000A547FD /* Sources */,
 				4EF3338624CEDFE000A547FD /* Frameworks */,
 				4EF3338724CEDFE000A547FD /* Resources */,
-				4E6ECD8324F6887700225EBE /* Embed Frameworks */,
 				7EF8506B932B13ADB13663A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4E6ECD8224F6887700225EBE /* PBXTargetDependency */,
 			);
 			name = TestAccountKitExample;
 			productName = TestAccountKitExample;
@@ -372,14 +343,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4E6ECD8224F6887700225EBE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4EF3337924CEDFB500A547FD /* TestAccountKit */;
-			targetProxy = 4E6ECD8124F6887700225EBE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4EF3339624CEDFE200A547FD /* LaunchScreen.storyboard */ = {
