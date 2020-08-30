@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/salah-mohammed/NavigationKit/blob/master/NavigationKitExample/example.gif)
 
-# NavigationKit
+# TestAccountKit
 
 TestAccountKit used for manage your accounts that used for login to your system .
 # Advantages
