@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   TestAccountKit:
-    :commit: f192dea91dd565a9f1e63f4201edd4aa93d16c0d
+    :commit: 1575186861054368e8e256edfce1df3740a99a4c
     :git: https://github.com/salah-mohammed/TestAccountKit.git
 
 SPEC CHECKSUMS:
