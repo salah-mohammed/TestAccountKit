@@ -17,6 +17,9 @@ TestAccountKit used for manage your accounts that used for login to your system 
 pod 'TestAccountKit',:git => "https://github.com/salah-mohammed/TestAccountKit.git"
  
 ```
+- First
+add plist it shuould be like this files
+
 - Second
 
 if your login screen login with username and password.
