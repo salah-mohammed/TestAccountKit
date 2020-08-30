@@ -6,7 +6,7 @@
 
 TestAccountKit used for manage your accounts that used for login to your system .
 # Advantages
-* Don't write your your account in login screen to enter to your system, you can choose it from saved list.
+* Don't write your account in login screen to enter to your system, you can choose it from saved list.
 * Our System can dealing with systems that have username to login or phone number or email to login.
 * Configuration is too easy.
 
