@@ -5,6 +5,10 @@
 # TestAccountKit
 
 TestAccountKit used for manage your accounts that used for login to your system .
+
+# Where Can Use TestAccountKit
+* This tools build for login in debug to facilitate entry to systems.
+
 # Advantages
 * Don't write your account in login screen to enter to your system, you can choose it from saved list.
 * The system can be used if the login screen by username or email or phonenumber.
