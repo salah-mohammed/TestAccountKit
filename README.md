@@ -18,8 +18,7 @@ pod 'TestAccountKit',:git => "https://github.com/salah-mohammed/TestAccountKit.g
  
 ```
 - First
-add plist it shuould be like this files
-
+add plist file it must be like this schema files https://github.com/salah-mohammed/TestAccountKit/blob/master/TestAccountKitExample/Plist/TestAccountListProducation.plist
 - Second
 
 if your login screen login with username and password.
