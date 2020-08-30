@@ -1,7 +1,6 @@
 # Result
 
-![alt text](https://github.com/salah-mohammed/TestAccountKit
-/TestAccountKitExample/ezgif-7-1816e37ad4d8.gif)
+![alt text](https://github.com/salah-mohammed/TestAccountKit/blob/master/TestAccountKitExample/ezgif-7-1816e37ad4d8.gif?raw=true)
 
 # TestAccountKit
 
