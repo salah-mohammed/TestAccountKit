@@ -17,19 +17,6 @@ TestAccountKit used for manage your accounts that used for login to your system 
 pod 'TestAccountKit',:git => "https://github.com/salah-mohammed/TestAccountKit.git"
  
 ```
-- First
-
-```swift
-public class MainNavigationController: NavigationController {
-
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        NavigationManager.shared.navigationController=self;
-        // Do any additional setup after loading the view.
-    }
-    
-}
-```
 - Second
 
 if you want set Navigation bar transparent and change title color .
@@ -92,10 +79,6 @@ NavigationManager.shared.defaultData = NavigationData.init(NavigationManager.Nav
  ```
 # Configure Successfully
 
-# You can refresh navigation style by 
-```swift
-(self.navigationController as? MainNavigationController)?.refrehNavigationData();
- ```
 # Developer's information to communicate
 
 - salah.mohamed_1995@hotmail.com
