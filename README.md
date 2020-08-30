@@ -101,25 +101,7 @@ if your login screen login with phone number .
 
  ```
 
-if you want to set background image for Navigation bar and set title color for it.
 
- ```swift
- class ForthViewController: UIViewController,NavigationDelegate {
-
-    var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.backgroundImage(UIImage.init(named:"navigationImage")!), titleColor: UIColor.white))
-    
-        public override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
- ```
-- Thired
-
-if you want to set default style 'if Viewcontroller not implement NavigationInfoDelegate'
-```swift
-NavigationManager.shared.defaultData = NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.customColor(UIColor.blue), titleColor:  UIColor.white))
-
- ```
 # Configure Successfully
 
 # Developer's information to communicate
