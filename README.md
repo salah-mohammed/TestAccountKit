@@ -19,43 +19,83 @@ pod 'TestAccountKit',:git => "https://github.com/salah-mohammed/TestAccountKit.g
 ```
 - Second
 
-if you want set Navigation bar transparent and change title color .
+if your login screen login with username and password.
 ```swift
-class FirstViewController: UIViewController,NavigationDelegate {
- 
-    var navigationData:NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.transparent,titleColor:UIColor.black))
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
+
+    @IBAction func btnLogin(_ sender: Any) {
+           #if DEBUG
+               if (self.txtUserName.text ?? "").count == 0 {
+                TestAccountManager.shared.development.show({ (item) -> String in
+                    return "(\(item.accountDescription ?? "")) \(item.username ?? "")"
+                }, selectedObject: { object in
+        self.txtUserName.text=object.username
+        self.txtPassword.text=object.password
+
+                     self.login()
+                } )
+           }else{
+               self.login()
+           }
+           #else
+                self.login()
+           #endif
     }
- }
+    func login(){
+        
+    }
 
  ```
  
- if you want to set Navigation bar color and set title color for it.
+if your login screen login with email and password.
  
  ```swift
 
-  class SecondViewController: UIViewController,NavigationDelegate {
-  
-  var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.custom(NavigationManager.BarColor.customColor(UIColor.blue), titleColor:  UIColor.white))
-    
-        public override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func btnLogin(_ sender: Any) {
+           #if DEBUG
+               if (self.txtEmail.text ?? "").count == 0 {
+                    TestAccountManager.shared.development.show(selectedObject: { object in
+                    self.txtEmail.text = object.email ?? "";
+                    self.txtPassword.text = object.password ?? "";
+                    self.login()
+                } )
+                
+           }else{
+               self.login()
+           }
+           #else
+                self.login()
+           #endif
     }
-}
+    func login(){
+        
+    }
+
 ```
-if you want to hide Navigation bar.
+if your login screen login with phone number .
 
  ```swift
- class ThiredViewController: UIViewController,NavigationDelegate {
 
-    var navigationData: NavigationData=NavigationData.init(NavigationManager.NavigationStyle.hide);
-    
-        public override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func btnLogin(_ sender: Any) {
+           #if DEBUG
+               if (self.txtPhoneNumber.text ?? "").count == 0 {
+                TestAccountManager.shared.development.show({ (item) -> String in
+                    return "(\(item.accountDescription ?? "")) \(item.phoneNumber ?? "")"
+                }, selectedObject:  { object in
+                               self.txtPhoneNumber.text = object.phoneNumber ?? "";
+                               self.login()
+                          })
+                
+           }else{
+               self.login()
+           }
+           #else
+                self.login()
+           #endif
     }
-}
+    func login(){
+        
+    }
+
  ```
 
 if you want to set background image for Navigation bar and set title color for it.
