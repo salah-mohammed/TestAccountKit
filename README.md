@@ -22,7 +22,7 @@ pod 'TestAccountKit',:git => "https://github.com/salah-mohammed/TestAccountKit.g
  
 ```
 - First
-add plist file it must be like this schema files :
+add plist file it must be like this schema :
 https://github.com/salah-mohammed/TestAccountKit/blob/master/TestAccountKitExample/Plist/TestAccountListProducation.plist
 - Second
 
