@@ -113,7 +113,7 @@ if your login screen login with phone number .
 
 ## License
 
-NavigationKit is released under the MIT license. [See LICENSE](https://github.com/salah-mohammed/NavigationKit/blob/master/LICENSE) for details.
+NavigationKit is released under the MIT license. [See LICENSE](https://github.com/salah-mohammed/TestAccountKit/blob/master/LICENSE) for details.
 
 # Developer's information to communicate
 
