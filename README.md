@@ -14,6 +14,9 @@ TestAccountKit used for manage your accounts that used for login to your system 
 * The system can be used if the login screen by username or email or phonenumber.
 * Configuration is too easy.
 
+# Requirements
+* IOS 13+ 
+* Swift 5+
 
 # How used (configuration): 
 # Pod install
@@ -107,6 +110,10 @@ if your login screen login with phone number .
 
 
 # Configure Successfully
+
+## License
+
+TestAccountKit is released under the MIT license. [See LICENSE](https://github.com/salah-mohammed/TestAccountKit/blob/master/LICENSE) for details.
 
 # Developer's information to communicate
 
