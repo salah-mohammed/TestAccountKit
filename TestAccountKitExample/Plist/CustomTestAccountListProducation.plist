@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>id</key>
+		<string>1</string>
 		<key>accountDescription</key>
 		<string>type 1</string>
 		<key>username</key>
@@ -17,6 +19,8 @@
 		<string></string>
 	</dict>
 	<dict>
+		<key>id</key>
+		<string>2</string>
 		<key>accountDescription</key>
 		<string>type 2</string>
 		<key>username</key>
@@ -31,6 +35,8 @@
 		<string></string>
 	</dict>
 	<dict>
+		<key>id</key>
+		<string>3</string>
 		<key>accountDescription</key>
 		<string>type 3</string>
 		<key>username</key>
@@ -45,6 +51,8 @@
 		<string></string>
 	</dict>
 	<dict>
+		<key>id</key>
+		<string>4</string>
 		<key>accountDescription</key>
 		<string>type 4</string>
 		<key>username</key>
