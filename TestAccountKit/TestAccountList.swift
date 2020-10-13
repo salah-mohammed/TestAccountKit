@@ -16,6 +16,10 @@ extension Sequence where Iterator.Element == TestAccountObject
        return first.order ?? 0 > second.order ?? 0 }
         return items.last?.order ?? 0;
     }
+//    func filter(txt:String)[TestAccountObject]{
+//
+//    return [];
+//    }
 }
 extension UserDefaults{
     static func setLastChoosedArray(values:[String],key:String){
@@ -31,7 +35,6 @@ public class TestAccountList: NSObject {
     case direct
     case inDirect
     }
-    var fetchType:FetchType = .inDirect;
     var lastChooseKey:String{
         switch self.accountType {
         case .development:
@@ -80,7 +83,7 @@ public class TestAccountList: NSObject {
      return Bundle.main.path(forResource:plistName, ofType: "plist")
     }
     public var accountType:AccountType!
-    func fetchInDirect()->[TestAccountObject]?{
+    private func fetchInDirect()->[TestAccountObject]?{
         let propertyListFormat =  PropertyListSerialization.PropertyListFormat.xml //Format of the Property List.
         let plistData: [String: AnyObject] = [:] //Our data
         if var  objects:[TestAccountObject]?=self.loaddSavedObjects(key:self.lastChooseKey){
@@ -88,8 +91,8 @@ public class TestAccountList: NSObject {
             }
         return []
     }
-    func fetch()->[TestAccountObject]?{
-        switch self.fetchType {
+    open func fetch(fetchType:FetchType)->[TestAccountObject]?{
+        switch fetchType {
         case .direct:
             return self.fetchDirect()
         case .inDirect:
@@ -97,7 +100,7 @@ public class TestAccountList: NSObject {
         }
         return []
     }
-    func fetchDirect()->[TestAccountObject]?{
+   private func fetchDirect()->[TestAccountObject]?{
         let propertyListFormat =  PropertyListSerialization.PropertyListFormat.xml //Format of the Property List.
         let plistData: [String: AnyObject] = [:] //Our data
         if let stringUrl:String = accountType.stringURL {
@@ -116,9 +119,8 @@ public class TestAccountList: NSObject {
         update();
     }
     public func showAsAlert(_ fetchType:FetchType, _ title:((TestAccountObject)->String)? = nil,selectedObject:@escaping (TestAccountObject)->Void){
-        self.fetchType = fetchType;
         let alertViewController:UIAlertController = UIAlertController.init(title:"", message:"", preferredStyle: UIAlertController.Style.actionSheet);
-        for object in self.fetch() ?? []{
+        for object in self.fetch(fetchType:fetchType) ?? []{
             alertViewController.addAction(UIAlertAction.init(title:title?(object) ?? "(\(object.accountDescription ?? "")) \(object.email ?? "")", style: .default, handler: { (action) in
                 selectedObject(object);
                 self.saveCoosedItem(object);

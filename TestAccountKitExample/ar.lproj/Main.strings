@@ -1,0 +1,69 @@
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "29g-BL-Guf"; */
+"29g-BL-Guf.placeholder" = "Username";
+
+/* Class = "UINavigationItem"; title = "Phone Number"; ObjectID = "2sp-D9-JSW"; */
+"2sp-D9-JSW.title" = "Phone Number";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "6hz-uW-va8"; */
+"6hz-uW-va8.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "Username and Password"; ObjectID = "ArQ-fi-k7I"; */
+"ArQ-fi-k7I.text" = "Username and Password";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Eet-M0-jdr"; */
+"Eet-M0-jdr.normalTitle" = "Login";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "GMu-sg-JGW"; */
+"GMu-sg-JGW.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "IK2-QD-uMx"; */
+"IK2-QD-uMx.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "JWc-bt-bgr"; */
+"JWc-bt-bgr.text" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "N2T-VC-ihb"; */
+"N2T-VC-ihb.normalTitle" = "Login";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "NFr-Bq-cAe"; */
+"NFr-Bq-cAe.placeholder" = "Password";
+
+/* Class = "UINavigationItem"; title = "Email"; ObjectID = "T2M-2w-V5r"; */
+"T2M-2w-V5r.title" = "Email";
+
+/* Class = "UILabel"; text = "Custom Plist using string url"; ObjectID = "Tw9-L7-irJ"; */
+"Tw9-L7-irJ.text" = "Custom Plist using string url";
+
+/* Class = "UITextField"; placeholder = "PhoneNumber"; ObjectID = "WoM-Iu-7oW"; */
+"WoM-Iu-7oW.placeholder" = "PhoneNumber";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "XGb-UV-V8c"; */
+"XGb-UV-V8c.placeholder" = "Email";
+
+/* Class = "UINavigationItem"; title = "User Name"; ObjectID = "cdB-ib-5pb"; */
+"cdB-ib-5pb.title" = "User Name";
+
+/* Class = "UILabel"; text = "Phone Number"; ObjectID = "df3-Na-Ehb"; */
+"df3-Na-Ehb.text" = "Phone Number";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "f4i-Yb-Jur"; */
+"f4i-Yb-Jur.placeholder" = "Username";
+
+/* Class = "UINavigationItem"; title = "User Name"; ObjectID = "fdf-nK-kRE"; */
+"fdf-nK-kRE.title" = "User Name";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "foT-Mk-mlC"; */
+"foT-Mk-mlC.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "Custom Plist using name"; ObjectID = "fs2-bD-6U7"; */
+"fs2-bD-6U7.text" = "Custom Plist using name";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "hJq-BR-EOL"; */
+"hJq-BR-EOL.placeholder" = "Password";
+
+/* Class = "UINavigationItem"; title = "Phone Number"; ObjectID = "lui-eq-hs0"; */
+"lui-eq-hs0.title" = "Phone Number";
+
+/* Class = "UITextField"; placeholder = "PhoneNumber"; ObjectID = "mDB-qS-kuv"; */
+"mDB-qS-kuv.placeholder" = "PhoneNumber";

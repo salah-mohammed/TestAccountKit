@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E5BB9D32535D215001C5337 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BB9D22535D215001C5337 /* AccountTableViewCell.swift */; };
+		4E5BB9D52535D2AA001C5337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E5BB9D42535D2A9001C5337 /* Assets.xcassets */; };
+		4E5BB9D72535D3C5001C5337 /* TestAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BB9D62535D3C5001C5337 /* TestAccountsViewController.swift */; };
+		4E5BB9DA2535D503001C5337 /* TestAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5BB9DC2535D503001C5337 /* TestAccount.storyboard */; };
+		4E5BB9DF2535D534001C5337 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E5BB9DD2535D534001C5337 /* Localizable.strings */; };
+		4E5BB9E22535D638001C5337 /* TestAccountKitEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BB9E12535D638001C5337 /* TestAccountKitEx.swift */; };
 		4E6ECD8824F68A9E00225EBE /* CustomTestAccountListProducation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8424F68A9E00225EBE /* CustomTestAccountListProducation.plist */; };
 		4E6ECD8B24F68A9E00225EBE /* CustomTestAccountListDevelopment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8724F68A9E00225EBE /* CustomTestAccountListDevelopment.plist */; };
 		4E6ECD8D24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8C24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift */; };
@@ -25,10 +31,18 @@
 		4EF333A924CEE3FA00A547FD /* LoginWithPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF333A824CEE3FA00A547FD /* LoginWithPhoneNumberViewController.swift */; };
 		4EF333B024CEF2C700A547FD /* LoginWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF333AF24CEF2C700A547FD /* LoginWithEmailViewController.swift */; };
 		4EF333B324CEF46A00A547FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF333B124CEF46900A547FD /* Main.storyboard */; };
-		EEA3512AE4192FCA6A87DC21 /* Pods_TestAccountKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8059A222844CE900DC71BAC0 /* Pods_TestAccountKitExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E5BB9D22535D215001C5337 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		4E5BB9D42535D2A9001C5337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E5BB9D62535D3C5001C5337 /* TestAccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAccountsViewController.swift; sourceTree = "<group>"; };
+		4E5BB9D82535D4BB001C5337 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		4E5BB9D92535D4BB001C5337 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4E5BB9DB2535D503001C5337 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TestAccount.storyboard; sourceTree = "<group>"; };
+		4E5BB9DE2535D534001C5337 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E5BB9E02535D53B001C5337 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E5BB9E12535D638001C5337 /* TestAccountKitEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAccountKitEx.swift; sourceTree = "<group>"; };
 		4E6ECD8424F68A9E00225EBE /* CustomTestAccountListProducation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTestAccountListProducation.plist; sourceTree = "<group>"; };
 		4E6ECD8724F68A9E00225EBE /* CustomTestAccountListDevelopment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTestAccountListDevelopment.plist; sourceTree = "<group>"; };
 		4E6ECD8C24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithUserNameWithCustomePlistViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEA3512AE4192FCA6A87DC21 /* Pods_TestAccountKitExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +99,9 @@
 		4EBA8BD724FC25EE002718D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4E5BB9DC2535D503001C5337 /* TestAccount.storyboard */,
+				4E5BB9DD2535D534001C5337 /* Localizable.strings */,
+				4E5BB9D42535D2A9001C5337 /* Assets.xcassets */,
 				4EBA8BD824FC25EE002718D5 /* Info.plist */,
 			);
 			path = Resources;
@@ -115,9 +131,12 @@
 			isa = PBXGroup;
 			children = (
 				4EF3337D24CEDFB500A547FD /* TestAccountKit.h */,
+				4E5BB9E12535D638001C5337 /* TestAccountKitEx.swift */,
 				4EF3339D24CEE04600A547FD /* TestAccountList.swift */,
 				4EF3339F24CEE04600A547FD /* TestAccountManager.swift */,
 				4EF3339E24CEE04600A547FD /* TestAccountObject.swift */,
+				4E5BB9D62535D3C5001C5337 /* TestAccountsViewController.swift */,
+				4E5BB9D22535D215001C5337 /* AccountTableViewCell.swift */,
 				4EBA8BD724FC25EE002718D5 /* Resources */,
 			);
 			path = TestAccountKit;
@@ -202,7 +221,6 @@
 				4EF3338524CEDFE000A547FD /* Sources */,
 				4EF3338624CEDFE000A547FD /* Frameworks */,
 				4EF3338724CEDFE000A547FD /* Resources */,
-				BBD4B79B76AE10832B5D823D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,6 +257,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 4EF3337024CEDFB500A547FD;
 			productRefGroup = 4EF3337B24CEDFB500A547FD /* Products */;
@@ -256,6 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E5BB9D52535D2AA001C5337 /* Assets.xcassets in Resources */,
+				4E5BB9DF2535D534001C5337 /* Localizable.strings in Resources */,
+				4E5BB9DA2535D503001C5337 /* TestAccount.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,23 +298,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BBD4B79B76AE10832B5D823D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TestAccountKitExample/Pods-TestAccountKitExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TestAccountKitExample/Pods-TestAccountKitExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestAccountKitExample/Pods-TestAccountKitExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CDBD0DCF6AD3A7B930BE9D0A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,8 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF333A224CEE04600A547FD /* TestAccountManager.swift in Sources */,
+				4E5BB9D32535D215001C5337 /* AccountTableViewCell.swift in Sources */,
 				4EF333A124CEE04600A547FD /* TestAccountObject.swift in Sources */,
+				4E5BB9D72535D3C5001C5337 /* TestAccountsViewController.swift in Sources */,
 				4EF333A024CEE04600A547FD /* TestAccountList.swift in Sources */,
+				4E5BB9E22535D638001C5337 /* TestAccountKitEx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,10 +353,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4E5BB9DC2535D503001C5337 /* TestAccount.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E5BB9DB2535D503001C5337 /* Base */,
+			);
+			name = TestAccount.storyboard;
+			sourceTree = "<group>";
+		};
+		4E5BB9DD2535D534001C5337 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E5BB9DE2535D534001C5337 /* ar */,
+				4E5BB9E02535D53B001C5337 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		4EF3339624CEDFE200A547FD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4EF3339724CEDFE200A547FD /* Base */,
+				4E5BB9D92535D4BB001C5337 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -357,6 +383,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4EF333B224CEF46900A547FD /* Base */,
+				4E5BB9D82535D4BB001C5337 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -368,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -431,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

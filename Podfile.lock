@@ -1,21 +1,3 @@
-PODS:
-  - TestAccountKit (0.0.2)
-
-DEPENDENCIES:
-  - TestAccountKit (from `https://github.com/salah-mohammed/TestAccountKit.git`)
-
-EXTERNAL SOURCES:
-  TestAccountKit:
-    :git: https://github.com/salah-mohammed/TestAccountKit.git
-
-CHECKOUT OPTIONS:
-  TestAccountKit:
-    :commit: 604ba828ecfa87e01ea92aa8c2313a0befe634e6
-    :git: https://github.com/salah-mohammed/TestAccountKit.git
-
-SPEC CHECKSUMS:
-  TestAccountKit: 6e8d33c0993316644a762f230c5f5d12feedcb13
-
-PODFILE CHECKSUM: 25b6fca697c73b9c66e999dd72e851f3a54e852f
+PODFILE CHECKSUM: 6922a3e892b6c8e8d4a99ebd0903166ccc9dbfbd
 
 COCOAPODS: 1.9.1

@@ -32,7 +32,7 @@ class LoginWithUserNameWithCustomePlistViewController: UIViewController {
            #if DEBUG
                 
                if (self.txtUserName.text ?? "").count == 0 {
-               TestAccountList.init(.plistName("CustomTestAccountListDevelopment")).show({ (item) -> String in
+               TestAccountList.init(.plistName("CustomTestAccountListDevelopment")).showAsAlert(TestAccountList.FetchType.direct,{ (item) -> String in
                         return "(\(item.accountDescription ?? "")) \(item.username ?? "")"
                        }, selectedObject: { object in
                self.txtUserName.text=object.username
