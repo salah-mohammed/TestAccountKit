@@ -81,7 +81,7 @@
                                                     <constraint firstAttribute="height" constant="429" id="LVL-XP-00Q"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CountryTableViewCell" rowHeight="112" id="nvy-9b-wGP" customClass="AccountTableViewCell" customModule="TestAccountKit" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AccountTableViewCell" rowHeight="112" id="nvy-9b-wGP" customClass="AccountTableViewCell" customModule="TestAccountKit" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="112"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nvy-9b-wGP" id="Ze9-ff-hvd">

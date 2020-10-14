@@ -8,23 +8,28 @@
 
 import UIKit
 
+public typealias SelectedHandler = (TestAccountObject)->Void
+public typealias BindingHandler = (TestAccountObject,AccountTableViewCell)->Void
 public class TestAccountsViewController: UIViewController,UITextFieldDelegate {
-    var testAccountManager:TestAccountList?
-    public typealias SelectedHandler = (TestAccountObject)->Void
-    public var selectedHandler:SelectedHandler?
+  
+    var selectedHandler:SelectedHandler?
+    var bindingHandler:BindingHandler?
+    var fetchType:TestAccountList.FetchType = .direct
+    var accountType:TestAccountList.AccountType = .development
+    var testAccountList:TestAccountList?
     @IBOutlet weak var tableViewCountry: UITableView!
     private var TestAccountObject : String?
     var countryObj : TestAccountObject?
-    var primaryArray: [TestAccountObject] = [TestAccountObject](){
+    var primaryArray: [TestAccountObject] = Array<TestAccountObject>(){
         didSet{
             self.searchArray = primaryArray;
         }
     }
-    var searchArray: [TestAccountObject] = [TestAccountObject]();
     @IBOutlet weak var txtSearch: UITextField!
+    var searchArray:[TestAccountObject] = Array<TestAccountObject>()
     override public func viewDidLoad() {
         super.viewDidLoad()
-
+        self.testAccountList = TestAccountList.init(accountType);
         tableViewCountry.delegate = self
         tableViewCountry.dataSource = self
         getDataFromJSON()
@@ -39,22 +44,7 @@ public class TestAccountsViewController: UIViewController,UITextFieldDelegate {
         self.view.backgroundColor=UIColor.clear;
     }
     func getDataFromJSON(){
-//        self.primaryArray =  CountryListManager.shared.getDataFromJSON() ?? []
-    }
-    
-    func search(dial_code : String) {
-        
-        var row = 0
-        for index in 0..<primaryArray.count {
-//            if primaryArray[index].dial_code == dial_code {
-//                row = index
-//                break
-//            }
-        }
-        
-        let indexPath = IndexPath(row: row, section: 0)
-        tableViewCountry.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
-
+        self.primaryArray = testAccountList?.fetch(fetchType:fetchType) ?? []
     }
     
     func alert(msg : String){
@@ -68,23 +58,21 @@ public class TestAccountsViewController: UIViewController,UITextFieldDelegate {
     }
     @IBAction func txtTxtSearch(_ sender: UITextField) {
         if sender.text?.count ?? 0 != 0 {
-        self.searchArray = self.search(text: sender.text!);
+           
+        self.searchArray = self.primaryArray.filter(txt:  sender.text!)
         }else{
         self.searchArray = self.primaryArray;
         }
         self.tableViewCountry.reloadData();
     }
-    func search(text:String)->[TestAccountObject]{
-//       let tempSearchArray = self.primaryArray.filter({ (object) -> Bool in
-//        return (object.dial_code?.contains(text) ?? false || object.name?.uppercased().contains(text.uppercased()) ?? false || object.localizeName()?.contains(text) ?? false || object.code?.contains(text) ?? false )
-//        });
-//        return tempSearchArray;
-        return []
-    }
-        public static func initPicker()->TestAccountsViewController?{
-            if let storyboard:UIStoryboard = UIStoryboard.init(name: "TestAccountKit", bundle:Bundle(for: TestAccountsViewController.self)),
-                let vc = storyboard.instantiateViewController(withIdentifier:"TestAccountsViewController") as? TestAccountsViewController{
 
+    public static func initPicker(_ accountType:TestAccountList.AccountType,fetchType:TestAccountList.FetchType,selectedHandler:@escaping SelectedHandler,bindingHandler:@escaping BindingHandler)->TestAccountsViewController?{
+            if let storyboard:UIStoryboard = UIStoryboard.init(name: "TestAccount", bundle:Bundle(for: TestAccountsViewController.self)),
+                let vc = storyboard.instantiateViewController(withIdentifier:"TestAccountsViewController") as? TestAccountsViewController{
+                vc.accountType=accountType;
+                vc.fetchType=fetchType;
+                vc.selectedHandler=selectedHandler;
+                vc.bindingHandler=bindingHandler;
             return vc;
         }
             return nil;
@@ -112,7 +100,7 @@ extension TestAccountsViewController: UITableViewDataSource{
         let object = self.searchArray[indexPath.row]
         cell.object = object
         cell.configureCell()
-
+        self.bindingHandler?(object,cell);
         return cell
     }
 }

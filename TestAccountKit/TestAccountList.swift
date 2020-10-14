@@ -16,10 +16,11 @@ extension Sequence where Iterator.Element == TestAccountObject
        return first.order ?? 0 > second.order ?? 0 }
         return items.last?.order ?? 0;
     }
-//    func filter(txt:String)[TestAccountObject]{
-//
-//    return [];
-//    }
+    func filter(txt:String)->[TestAccountObject]{      
+    return self.filter { (item) -> Bool in
+              return item.id?.contains(txt) ?? false || item.email?.contains(txt) ?? false ||  item.username?.contains(txt) ?? false || item.accountDescription?.contains(txt) ?? false
+          }
+    }
 }
 extension UserDefaults{
     static func setLastChoosedArray(values:[String],key:String){

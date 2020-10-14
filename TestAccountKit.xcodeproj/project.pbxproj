@@ -13,6 +13,9 @@
 		4E5BB9DA2535D503001C5337 /* TestAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5BB9DC2535D503001C5337 /* TestAccount.storyboard */; };
 		4E5BB9DF2535D534001C5337 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E5BB9DD2535D534001C5337 /* Localizable.strings */; };
 		4E5BB9E22535D638001C5337 /* TestAccountKitEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BB9E12535D638001C5337 /* TestAccountKitEx.swift */; };
+		4E5BB9E42536F0E1001C5337 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BB9E32536F0E1001C5337 /* NewViewController.swift */; };
+		4E5BB9E52536F1E1001C5337 /* TestAccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF3337A24CEDFB500A547FD /* TestAccountKit.framework */; };
+		4E5BB9E62536F1E1001C5337 /* TestAccountKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF3337A24CEDFB500A547FD /* TestAccountKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4E6ECD8824F68A9E00225EBE /* CustomTestAccountListProducation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8424F68A9E00225EBE /* CustomTestAccountListProducation.plist */; };
 		4E6ECD8B24F68A9E00225EBE /* CustomTestAccountListDevelopment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8724F68A9E00225EBE /* CustomTestAccountListDevelopment.plist */; };
 		4E6ECD8D24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8C24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift */; };
@@ -33,6 +36,30 @@
 		4EF333B324CEF46A00A547FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF333B124CEF46900A547FD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4E5BB9E72536F1E1001C5337 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF3337124CEDFB500A547FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EF3337924CEDFB500A547FD;
+			remoteInfo = TestAccountKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4E5BB9E92536F1E1001C5337 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4E5BB9E62536F1E1001C5337 /* TestAccountKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4E5BB9D22535D215001C5337 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		4E5BB9D42535D2A9001C5337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +70,7 @@
 		4E5BB9DE2535D534001C5337 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E5BB9E02535D53B001C5337 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E5BB9E12535D638001C5337 /* TestAccountKitEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAccountKitEx.swift; sourceTree = "<group>"; };
+		4E5BB9E32536F0E1001C5337 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		4E6ECD8424F68A9E00225EBE /* CustomTestAccountListProducation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTestAccountListProducation.plist; sourceTree = "<group>"; };
 		4E6ECD8724F68A9E00225EBE /* CustomTestAccountListDevelopment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTestAccountListDevelopment.plist; sourceTree = "<group>"; };
 		4E6ECD8C24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithUserNameWithCustomePlistViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E5BB9E52536F1E1001C5337 /* TestAccountKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +181,7 @@
 				4EF333AF24CEF2C700A547FD /* LoginWithEmailViewController.swift */,
 				4E6ECD8C24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift */,
 				4E6ECD8E24F692B800225EBE /* LoginWithPhoneNumberWithCustomePlistViewController.swift */,
+				4E5BB9E32536F0E1001C5337 /* NewViewController.swift */,
 				4EF333B124CEF46900A547FD /* Main.storyboard */,
 				4EF333A324CEE0D400A547FD /* Plist */,
 				4EF3339424CEDFE200A547FD /* Assets.xcassets */,
@@ -221,10 +251,12 @@
 				4EF3338524CEDFE000A547FD /* Sources */,
 				4EF3338624CEDFE000A547FD /* Frameworks */,
 				4EF3338724CEDFE000A547FD /* Resources */,
+				4E5BB9E92536F1E1001C5337 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4E5BB9E82536F1E1001C5337 /* PBXTargetDependency */,
 			);
 			name = TestAccountKitExample;
 			productName = TestAccountKitExample;
@@ -343,6 +375,7 @@
 				4EF3339024CEDFE000A547FD /* LoginWithUserNameViewController.swift in Sources */,
 				4EF3338C24CEDFE000A547FD /* AppDelegate.swift in Sources */,
 				4E6ECD8D24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift in Sources */,
+				4E5BB9E42536F0E1001C5337 /* NewViewController.swift in Sources */,
 				4EF333B024CEF2C700A547FD /* LoginWithEmailViewController.swift in Sources */,
 				4E6ECD8F24F692B800225EBE /* LoginWithPhoneNumberWithCustomePlistViewController.swift in Sources */,
 				4EF333A924CEE3FA00A547FD /* LoginWithPhoneNumberViewController.swift in Sources */,
@@ -351,6 +384,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E5BB9E82536F1E1001C5337 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EF3337924CEDFB500A547FD /* TestAccountKit */;
+			targetProxy = 4E5BB9E72536F1E1001C5337 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4E5BB9DC2535D503001C5337 /* TestAccount.storyboard */ = {

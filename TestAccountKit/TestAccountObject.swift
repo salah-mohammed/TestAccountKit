@@ -18,6 +18,9 @@ public class TestAccountObject: NSObject {
     open var password:String?;
     open var other:String?;
     open var order:Int?
+    public override init() {
+        super.init();
+    }
      init(dic:[String:Any]) {
         super.init()
         self.dic=dic;

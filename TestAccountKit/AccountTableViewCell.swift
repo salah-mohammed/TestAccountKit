@@ -8,21 +8,22 @@
 
 import UIKit
 
-class AccountTableViewCell: UITableViewCell {
+public class AccountTableViewCell: UITableViewCell {
     @IBOutlet weak var lblUsername: UILabel!
     @IBOutlet weak var lblPhoneNumber: UILabel!
     var object:TestAccountObject?
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     func configureCell(){
-        
+        self.lblUsername.text=object?.username;
+        self.lblPhoneNumber.text=object?.phoneNumber;
     }
 }
