@@ -21,6 +21,16 @@ extension Sequence where Iterator.Element == TestAccountObject
               return item.id?.contains(txt) ?? false || item.email?.contains(txt) ?? false ||  item.username?.contains(txt) ?? false || item.accountDescription?.contains(txt) ?? false
           }
     }
+    func isContains(_ object:TestAccountObject)->Bool{
+        var item = self.filter { (item) -> Bool in
+        return object.isEqual(item)};
+        return item.count != 0
+    }
+    func isUpdated(_ object:TestAccountObject)->TestAccountObject?{
+        var item = self.filter { (item) -> Bool in
+            return object.isUpdated(item)}.first;
+        return item
+    }
 }
 extension UserDefaults{
     static func setLastChoosedArray(values:[String],key:String){
@@ -199,15 +209,18 @@ extension TestAccountList{
         // when update data
         for item in directObjects ?? []{
             // when add new item
-            if inDirectObjects?.contains(item) == false {
+            if inDirectObjects?.isContains(item) == false {
             inDirectObjects?.append(item)
             }
+            if let internalItem:TestAccountObject = inDirectObjects?.isUpdated(item){
+                internalItem.update(newObject:item);
+            }
         }
-        for item in inDirectObjects ?? []{
+        for inDirectItem in inDirectObjects ?? []{
             // when remove item
-            if directObjects?.contains(item) == false {
+            if directObjects?.isContains(inDirectItem) == false {
                 inDirectObjects?.removeAll(where: { (item) -> Bool in
-                    item == item
+                    inDirectItem == item
                 });
             }
         }

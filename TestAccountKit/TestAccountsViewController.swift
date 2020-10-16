@@ -45,6 +45,9 @@ public class TestAccountsViewController: UIViewController,UITextFieldDelegate {
     }
     func getDataFromJSON(){
         self.primaryArray = testAccountList?.fetch(fetchType:fetchType) ?? []
+        print(primaryArray);
+        print(primaryArray);
+
     }
     
     func alert(msg : String){

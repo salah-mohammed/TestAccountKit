@@ -33,10 +33,12 @@ class NewViewController: UIViewController {
            #if DEBUG
                 
                if (self.txtUserName.text ?? "").count == 0 {
-                var vc = TestAccountsViewController.initPicker(.development, fetchType:.direct, selectedHandler: { (item) in
-                
+                var vc = TestAccountsViewController.initPicker(.development, fetchType:.inDirect, selectedHandler: { (item) in
+                    self.txtUserName.text=item.username;
+                    self.txtPassword.text=item.password;
                 }) { (object, cell) in
-                    
+                    cell.lblTitle.text=object.username;
+                    cell.lblSubTitle.text=object.accountDescription;
                 }
                 self.present(vc!, animated: true, completion: nil);
 //               TestAccountList.init(.plistName("CustomTestAccountListDevelopment")).showAsAlert(TestAccountList.FetchType.direct,{ (item) -> String in

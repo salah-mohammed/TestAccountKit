@@ -9,8 +9,8 @@
 import UIKit
 
 public class AccountTableViewCell: UITableViewCell {
-    @IBOutlet weak var lblUsername: UILabel!
-    @IBOutlet weak var lblPhoneNumber: UILabel!
+    @IBOutlet open weak var lblTitle: UILabel!
+    @IBOutlet open weak var lblSubTitle: UILabel!
     var object:TestAccountObject?
     public override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,7 @@ public class AccountTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func configureCell(){
-        self.lblUsername.text=object?.username;
-        self.lblPhoneNumber.text=object?.phoneNumber;
+        self.lblTitle.text=object?.username;
+        self.lblSubTitle.text=object?.accountDescription;
     }
 }

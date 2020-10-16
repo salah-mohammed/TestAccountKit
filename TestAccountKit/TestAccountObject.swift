@@ -61,7 +61,15 @@ public class TestAccountObject: NSObject {
         }
         return false;
     }
-    func isUpdated(newObject:TestAccountObject)->Bool{
+    func update(newObject:TestAccountObject){
+        self.accountDescription=newObject.accountDescription
+        self.username=newObject.username
+        self.email=newObject.email
+        self.phoneNumber=newObject.phoneNumber;
+        self.password=newObject.password;
+        self.other=newObject.other;
+    }
+    func isUpdated(_ newObject:TestAccountObject)->Bool{
         if (newObject.id == self.id){
             if accountDescription != newObject.accountDescription ||
              username != newObject.username ||
