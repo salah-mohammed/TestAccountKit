@@ -16,6 +16,8 @@
 		4E5BB9E42536F0E1001C5337 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BB9E32536F0E1001C5337 /* NewViewController.swift */; };
 		4E5BB9E52536F1E1001C5337 /* TestAccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF3337A24CEDFB500A547FD /* TestAccountKit.framework */; };
 		4E5BB9E62536F1E1001C5337 /* TestAccountKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF3337A24CEDFB500A547FD /* TestAccountKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4E5BEDAC253B3694001B9278 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5BEDAA253B3693001B9278 /* AlertView.xib */; };
+		4E5BEDAD253B3694001B9278 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BEDAB253B3693001B9278 /* AlertView.swift */; };
 		4E6ECD8824F68A9E00225EBE /* CustomTestAccountListProducation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8424F68A9E00225EBE /* CustomTestAccountListProducation.plist */; };
 		4E6ECD8B24F68A9E00225EBE /* CustomTestAccountListDevelopment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8724F68A9E00225EBE /* CustomTestAccountListDevelopment.plist */; };
 		4E6ECD8D24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ECD8C24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift */; };
@@ -71,6 +73,8 @@
 		4E5BB9E02535D53B001C5337 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E5BB9E12535D638001C5337 /* TestAccountKitEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAccountKitEx.swift; sourceTree = "<group>"; };
 		4E5BB9E32536F0E1001C5337 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		4E5BEDAA253B3693001B9278 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		4E5BEDAB253B3693001B9278 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		4E6ECD8424F68A9E00225EBE /* CustomTestAccountListProducation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTestAccountListProducation.plist; sourceTree = "<group>"; };
 		4E6ECD8724F68A9E00225EBE /* CustomTestAccountListDevelopment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTestAccountListDevelopment.plist; sourceTree = "<group>"; };
 		4E6ECD8C24F68B1900225EBE /* LoginWithUserNameWithCustomePlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithUserNameWithCustomePlistViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E5BEDA9253B3693001B9278 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				4E5BEDAA253B3693001B9278 /* AlertView.xib */,
+				4E5BEDAB253B3693001B9278 /* AlertView.swift */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
 		4E6ECD7E24F6887700225EBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				4E5BB9DC2535D503001C5337 /* TestAccount.storyboard */,
+				4E5BEDA9253B3693001B9278 /* AlertView */,
 				4E5BB9DD2535D534001C5337 /* Localizable.strings */,
 				4E5BB9D42535D2A9001C5337 /* Assets.xcassets */,
 				4EBA8BD824FC25EE002718D5 /* Info.plist */,
@@ -308,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E5BB9D52535D2AA001C5337 /* Assets.xcassets in Resources */,
+				4E5BEDAC253B3694001B9278 /* AlertView.xib in Resources */,
 				4E5BB9DF2535D534001C5337 /* Localizable.strings in Resources */,
 				4E5BB9DA2535D503001C5337 /* TestAccount.storyboard in Resources */,
 			);
@@ -361,6 +376,7 @@
 			files = (
 				4EF333A224CEE04600A547FD /* TestAccountManager.swift in Sources */,
 				4E5BB9D32535D215001C5337 /* AccountTableViewCell.swift in Sources */,
+				4E5BEDAD253B3694001B9278 /* AlertView.swift in Sources */,
 				4EF333A124CEE04600A547FD /* TestAccountObject.swift in Sources */,
 				4E5BB9D72535D3C5001C5337 /* TestAccountsViewController.swift in Sources */,
 				4EF333A024CEE04600A547FD /* TestAccountList.swift in Sources */,
