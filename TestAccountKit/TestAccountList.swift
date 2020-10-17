@@ -13,7 +13,7 @@ extension Sequence where Iterator.Element == TestAccountObject
     // ...
     var lastOrder:Int{
        var items =  self.sorted { (first, second) -> Bool in
-       return first.order ?? 0 > second.order ?? 0 }
+       return first.order ?? 0 < second.order ?? 0 }
         return items.last?.order ?? 0;
     }
     func filter(txt:String)->[TestAccountObject]{      
@@ -46,30 +46,6 @@ public class TestAccountList: NSObject {
     case direct
     case inDirect
     }
-    var lastChooseKey:String{
-        switch self.accountType {
-        case .development:
-            return "TestAccountListDevelopment.json";
-        case .producation:
-            return "TestAccountListProducation.json";
-        case .plistName(let plistName):
-            return "";
-        case .plistStringURL(let url):
-            return "";
-        case .none:
-            
-            return "";
-        }
-    }
-    var lastChooseArray:[String]{
-        set{
-            UserDefaults.setLastChoosedArray(values:lastChooseArray, key:lastChooseKey ?? "")
-        }
-        get{
-            return UserDefaults.getLastChoosedArray(key:lastChooseKey ?? "");
-        }
-    }
-    
     public enum AccountType{
     case development // You should set plist with this name "TestAccountListDevelopment.plist"
     case producation // You should set plist with this name "TestAccountListProducation.plist"
@@ -94,22 +70,15 @@ public class TestAccountList: NSObject {
      return Bundle.main.path(forResource:plistName, ofType: "plist")
     }
     public var accountType:AccountType!
-    private func fetchInDirect()->[TestAccountObject]?{
-        let propertyListFormat =  PropertyListSerialization.PropertyListFormat.xml //Format of the Property List.
-        let plistData: [String: AnyObject] = [:] //Our data
-        if var  objects:[TestAccountObject]?=self.loaddSavedObjects(key:self.lastChooseKey){
-            return objects
-            }
-        return []
-    }
     open func fetch(fetchType:FetchType)->[TestAccountObject]?{
         switch fetchType {
         case .direct:
             return self.fetchDirect()
         case .inDirect:
-            return self.fetchInDirect();
+            return self.fetchInDirect()?.sorted(by: { (first, second) -> Bool in
+                return first.order ?? -1 > second.order ?? -1
+            })
         }
-        return []
     }
    private func fetchDirect()->[TestAccountObject]?{
         let propertyListFormat =  PropertyListSerialization.PropertyListFormat.xml //Format of the Property List.
@@ -147,6 +116,28 @@ public class TestAccountList: NSObject {
 
 
 extension TestAccountList{
+    var lastChooseKey:String{
+        switch self.accountType {
+        case .development:
+            return "TestAccountListDevelopment.json";
+        case .producation:
+            return "TestAccountListProducation.json";
+        case .plistName(let plistName):
+            return "";
+        case .plistStringURL(let url):
+            return "";
+        case .none:
+            
+            return "";
+        }
+    }
+    private func fetchInDirect()->[TestAccountObject]?{
+        let propertyListFormat =  PropertyListSerialization.PropertyListFormat.xml //Format of the Property List.
+        if var  objects:[TestAccountObject]?=self.loaddSavedObjects(key:self.lastChooseKey){
+            return objects
+            }
+        return []
+    }
     func savedListURL(key:String)->URL?{
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
         let fileURL = dir.appendingPathComponent(key)
@@ -154,11 +145,10 @@ extension TestAccountList{
         }
         return nil;
     }
-    func saveCoosedItem(_ item:TestAccountObject){
+    open func saveCoosedItem(_ item:TestAccountObject){
         var saved = self.loaddSavedObjects(key: self.lastChooseKey)
-
         saved.removeAll { (object) -> Bool in
-            return item.isEqual(object)
+            return object.isEqual(item)
         }
         item.order = saved.lastOrder + 1;
         saved.append(item)

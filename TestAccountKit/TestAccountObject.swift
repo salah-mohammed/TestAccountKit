@@ -17,7 +17,11 @@ public class TestAccountObject: NSObject {
     open var phoneNumber:String?;
     open var password:String?;
     open var other:String?;
-    open var order:Int?
+    open var order:Int?{
+        didSet{
+            dic?["order"] = order
+        }
+    }
     public override init() {
         super.init();
     }
@@ -31,6 +35,8 @@ public class TestAccountObject: NSObject {
         self.phoneNumber = dic["phoneNumber"] as? String
         self.password = dic["password"] as? String
         self.other = dic["other"] as? String
+        self.order = dic["order"] as? Int
+
         
     }
      func isEqual(_ object: TestAccountObject?) -> Bool{
@@ -68,6 +74,13 @@ public class TestAccountObject: NSObject {
         self.phoneNumber=newObject.phoneNumber;
         self.password=newObject.password;
         self.other=newObject.other;
+        dic?["accountDescription"]=accountDescription
+        dic?["username"]=username
+        dic?["email"]=email
+        dic?["phoneNumber"]=phoneNumber
+        dic?["password"]=password
+        dic?["other"]=other
+
     }
     func isUpdated(_ newObject:TestAccountObject)->Bool{
         if (newObject.id == self.id){

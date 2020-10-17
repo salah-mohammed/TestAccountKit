@@ -87,6 +87,7 @@ extension TestAccountsViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          let countryObject = self.searchArray[indexPath.row]
          selectedHandler?(countryObject)
+        self.testAccountList?.saveCoosedItem(countryObject);
          self.dismiss(animated: true, completion: nil)
          tableView.deselectRow(at: indexPath, animated: true);
     }
