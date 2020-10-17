@@ -37,3 +37,21 @@ extension UIViewController{
          self.present(alert, animated: true, completion: nil)
      }
 }
+extension String {
+    func fileName() -> String {
+        return URL(fileURLWithPath: self).fileName();
+    }
+
+    func fileExtension() -> String {
+        return URL(fileURLWithPath: self).fileExtension();
+    }
+}
+extension URL {
+    func fileName() -> String {
+        return self.deletingPathExtension().lastPathComponent
+    }
+
+    func fileExtension() -> String {
+        return self.pathExtension
+    }
+}

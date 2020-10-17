@@ -123,9 +123,9 @@ extension TestAccountList{
         case .producation:
             return "TestAccountListProducation.json";
         case .plistName(let plistName):
-            return "";
+            return "\(plistName.fileName()).\(plistName.fileExtension())";
         case .plistStringURL(let url):
-            return "";
+            return "\(url.fileName()).json";
         case .none:
             
             return "";

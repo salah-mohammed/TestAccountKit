@@ -33,7 +33,7 @@ class NewViewController: UIViewController {
            #if DEBUG
                 
                if (self.txtUserName.text ?? "").count == 0 {
-                var vc = TestAccountsViewController.initPicker(.development, fetchType:.inDirect, selectedHandler: { (item) in
+                var vc = TestAccountsViewController.initPicker(.plistStringURL(Bundle.main.path(forResource:"TestAccountListProducation", ofType: "plist")!), fetchType:.inDirect, selectedHandler: { (item) in
                     self.txtUserName.text=item.username;
                     self.txtPassword.text=item.password;
                 }) { (object, cell) in
