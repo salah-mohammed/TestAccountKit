@@ -13,6 +13,9 @@ TestAccountKit used for manage your accounts that used for login to your system 
 * Don't write your account in login screen to enter to your system, you can choose it from saved list.
 * The system can be used if the login screen by username or email or phonenumber.
 * Configuration is too easy.
+* You can Search By phoneNumber or by password or by username or by email or by account description.
+* When use .indirect , last item you choose it appear at top( Sorted by The last item was selected ) .
+* When use .direct , the accounts will appear from plist data with out sort by selection.
 
 # Requirements
 * IOS 13+ 
