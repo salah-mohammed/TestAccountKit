@@ -30,7 +30,6 @@
 		4EF3339824CEDFE200A547FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF3339624CEDFE200A547FD /* LaunchScreen.storyboard */; };
 		4EF333A024CEE04600A547FD /* TestAccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3339D24CEE04600A547FD /* TestAccountList.swift */; };
 		4EF333A124CEE04600A547FD /* TestAccountObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3339E24CEE04600A547FD /* TestAccountObject.swift */; };
-		4EF333A224CEE04600A547FD /* TestAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3339F24CEE04600A547FD /* TestAccountManager.swift */; };
 		4EF333A624CEE0D400A547FD /* TestAccountListDevelopment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF333A424CEE0D400A547FD /* TestAccountListDevelopment.plist */; };
 		4EF333A724CEE0D400A547FD /* TestAccountListProducation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF333A524CEE0D400A547FD /* TestAccountListProducation.plist */; };
 		4EF333A924CEE3FA00A547FD /* LoginWithPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF333A824CEE3FA00A547FD /* LoginWithPhoneNumberViewController.swift */; };
@@ -91,7 +90,6 @@
 		4EF3339924CEDFE200A547FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EF3339D24CEE04600A547FD /* TestAccountList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAccountList.swift; sourceTree = "<group>"; };
 		4EF3339E24CEE04600A547FD /* TestAccountObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAccountObject.swift; sourceTree = "<group>"; };
-		4EF3339F24CEE04600A547FD /* TestAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAccountManager.swift; sourceTree = "<group>"; };
 		4EF333A424CEE0D400A547FD /* TestAccountListDevelopment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestAccountListDevelopment.plist; sourceTree = "<group>"; };
 		4EF333A524CEE0D400A547FD /* TestAccountListProducation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestAccountListProducation.plist; sourceTree = "<group>"; };
 		4EF333A824CEE3FA00A547FD /* LoginWithPhoneNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWithPhoneNumberViewController.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				4EF3337D24CEDFB500A547FD /* TestAccountKit.h */,
 				4E5BB9E12535D638001C5337 /* TestAccountKitEx.swift */,
 				4EF3339D24CEE04600A547FD /* TestAccountList.swift */,
-				4EF3339F24CEE04600A547FD /* TestAccountManager.swift */,
 				4EF3339E24CEE04600A547FD /* TestAccountObject.swift */,
 				4E5BB9D62535D3C5001C5337 /* TestAccountsViewController.swift */,
 				4E5BB9D22535D215001C5337 /* AccountTableViewCell.swift */,
@@ -374,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EF333A224CEE04600A547FD /* TestAccountManager.swift in Sources */,
 				4E5BB9D32535D215001C5337 /* AccountTableViewCell.swift in Sources */,
 				4E5BEDAD253B3694001B9278 /* AlertView.swift in Sources */,
 				4EF333A124CEE04600A547FD /* TestAccountObject.swift in Sources */,

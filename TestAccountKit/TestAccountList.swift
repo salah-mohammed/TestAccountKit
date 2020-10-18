@@ -10,40 +10,9 @@ import UIKit
 import Foundation
 let BuildVersion = Bundle(for: TestAccountObject.self).buildVersionNumber
 
-extension Sequence where Iterator.Element == TestAccountObject
-{
-    // ...
-    var lastOrder:Int{
-       var items =  self.sorted { (first, second) -> Bool in
-       return first.order ?? 0 < second.order ?? 0 }
-        return items.last?.order ?? 0;
-    }
-    func filter(txt:String)->[TestAccountObject]{      
-    return self.filter { (item) -> Bool in
-              return item.id?.contains(txt) ?? false || item.email?.contains(txt) ?? false ||  item.username?.contains(txt) ?? false || item.accountDescription?.contains(txt) ?? false
-          }
-    }
-    func isContains(_ object:TestAccountObject)->Bool{
-        var item = self.filter { (item) -> Bool in
-        return object.isEqual(item)};
-        return item.count != 0
-    }
-    func isUpdated(_ object:TestAccountObject)->TestAccountObject?{
-        var item = self.filter { (item) -> Bool in
-            return object.isUpdated(item)}.first;
-        return item
-    }
-}
-extension UserDefaults{
-    var savedBuildVersion:String?{
-        set{
-            UserDefaults.standard.set(newValue, forKey:"SavedBuildVersion")
-        }
-        get{
-            return UserDefaults.standard.value(forKey:"SavedBuildVersion") as? String
-        }
-    }
-}
+public typealias SelectedHandler = (TestAccountObject)->Void
+public typealias BindingHandler = (TestAccountObject,AccountTableViewCell)->Void
+public typealias TitleHandler = ((TestAccountObject)->String)
 
 public class TestAccountList: NSObject {
     let folderName:String="TestAccountKit";
@@ -132,32 +101,6 @@ public class TestAccountList: NSObject {
     });
     }
 
-}
-extension UIAlertController{
-    
-    public static func show(_ accountType:TestAccountList.AccountType ,
-                            _ fetchType:TestAccountList.FetchType,
-                            _ title:TitleHandler? = nil,
-                            selectedHandler:SelectedHandler?){
-            let alertController:UIAlertController = UIAlertController.init(title:"\n\n\n\n\n\n\n\n\n\n\n\n", message:"\n\n\n\n\n", preferredStyle: UIAlertController.Style.actionSheet);
-        var customView = AlertView.instanceFromNib();
-        customView.update(accountType, fetchType, title, selectedHandler,alertController);
-        let parent = alertController.view.subviews[0].subviews[0];
-        parent.addSubview(customView)
-        
-        customView.translatesAutoresizingMaskIntoConstraints = false
-
-        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .trailing, relatedBy: .equal, toItem: parent, attribute: .trailing, multiplier: 1, constant: 0))
-        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .leading, relatedBy: .equal, toItem: parent, attribute: .leading, multiplier: 1, constant: 0))
-        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .top, relatedBy: .equal, toItem: parent, attribute: .top, multiplier: 1, constant: 0))
-        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .bottom, relatedBy: .equal, toItem: parent, attribute: .bottom, multiplier: 1, constant: 0))
-        
-            alertController.addAction(UIAlertAction.init(title:"Cancel".customLocalize_, style:.cancel, handler: { (alertAction) in
-                alertController.dismiss(animated: false, completion: nil);
-            }))
-        (UIApplication.shared.windows.first?.rootViewController as? UIViewController)?.present(alertController, animated: true, completion:{
-        });
-        }
 }
 extension TestAccountList{
     func buildVersionUpdate(){

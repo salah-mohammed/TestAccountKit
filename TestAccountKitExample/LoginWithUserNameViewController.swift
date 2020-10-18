@@ -28,7 +28,6 @@ class LoginWithUserNameViewController: UIViewController {
                 }, selectedHandler: { object in
         self.txtUserName.text=object.username
         self.txtPassword.text=object.password
-
                      self.login()
                 } )
            }else{
