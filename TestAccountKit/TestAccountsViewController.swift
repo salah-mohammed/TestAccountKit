@@ -8,9 +8,6 @@
 
 import UIKit
 
-public typealias SelectedHandler = (TestAccountObject)->Void
-public typealias BindingHandler = (TestAccountObject,AccountTableViewCell)->Void
-public typealias TitleHandler = ((TestAccountObject)->String)
 
 public class TestAccountsViewController: UIViewController,UITextFieldDelegate {
   
@@ -47,15 +44,6 @@ public class TestAccountsViewController: UIViewController,UITextFieldDelegate {
     }
     func getDataFromJSON(){
         self.primaryArray = testAccountList?.fetch(fetchType:fetchType) ?? []
-        print(primaryArray);
-        print(primaryArray);
-
-    }
-    
-    func alert(msg : String){
-        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func btnCancel(_ sender: Any) {

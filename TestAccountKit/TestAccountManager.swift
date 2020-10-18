@@ -8,11 +8,14 @@
 
 import UIKit
 
-public class TestAccountManager: NSObject {
-    public var production:TestAccountList=TestAccountList.init(.producation);
-    public var development:TestAccountList=TestAccountList.init(.development);
-    
-    public static let shared: TestAccountManager = { TestAccountManager()} ()
+public typealias SelectedHandler = (TestAccountObject)->Void
+public typealias BindingHandler = (TestAccountObject,AccountTableViewCell)->Void
+public typealias TitleHandler = ((TestAccountObject)->String)
+
+class TestAccountManager: NSObject {
+     var production:TestAccountList=TestAccountList.init(.producation);
+     var development:TestAccountList=TestAccountList.init(.development);
+     static let shared: TestAccountManager = { TestAccountManager()} ()
     public override init() {
         super.init()
         

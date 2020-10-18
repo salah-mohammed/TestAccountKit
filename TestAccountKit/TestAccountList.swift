@@ -8,6 +8,8 @@
 
 import UIKit
 import Foundation
+let BuildVersion = Bundle(for: TestAccountObject.self).buildVersionNumber
+
 extension Sequence where Iterator.Element == TestAccountObject
 {
     // ...
@@ -33,11 +35,13 @@ extension Sequence where Iterator.Element == TestAccountObject
     }
 }
 extension UserDefaults{
-    static func setLastChoosedArray(values:[String],key:String){
-        UserDefaults.standard.set(values, forKey:key)
-    }
-    static func getLastChoosedArray(key:String)->[String]{
-     return UserDefaults.standard.stringArray(forKey:key) ?? []
+    var savedBuildVersion:String?{
+        set{
+            UserDefaults.standard.set(newValue, forKey:"SavedBuildVersion")
+        }
+        get{
+            return UserDefaults.standard.value(forKey:"SavedBuildVersion") as? String
+        }
     }
 }
 
@@ -97,7 +101,9 @@ public class TestAccountList: NSObject {
         super.init()
         self.accountType=accountType;
         update();
+        buildVersionUpdate();
     }
+
     private func showAsAlert(_ fetchType:FetchType, _ title:((TestAccountObject)->String)? = nil,selectedObject:@escaping (TestAccountObject)->Void){
         let alertViewController:UIAlertController = UIAlertController.init(title:"ChooseAccount".customLocalize_, message:"Choose".customLocalize_, preferredStyle: UIAlertController.Style.actionSheet);
         
@@ -142,6 +148,26 @@ extension UIAlertController{
         }
 }
 extension TestAccountList{
+    func buildVersionUpdate(){
+        if UserDefaults.standard.savedBuildVersion == nil {
+            // first time use
+            UserDefaults.standard.savedBuildVersion=BuildVersion
+        }else{
+            if let savedBuildVersion:String = UserDefaults.standard.savedBuildVersion,
+                let BuildVersion:String = BuildVersion {
+                if BuildVersion != savedBuildVersion {
+                    switch BuildVersion{
+                    case "0.1.2":
+                    print("0.1.2");
+                    break;
+                    default:
+                    break;
+                }
+                UserDefaults.standard.savedBuildVersion=BuildVersion
+                }
+            }
+        }
+    }
     var lastChooseKey:String{
         switch self.accountType {
         case .development:
