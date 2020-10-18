@@ -46,6 +46,15 @@ extension UserDefaults{
 }
 
 public class TestAccountList: NSObject {
+    let folderName:String="TestAccountKit";
+    var folderURL:URL?{
+        if var dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+        dir = dir.appendingPathComponent(folderName)
+            return dir;
+        }
+       return nil
+    }
+
     public enum FetchType{
     case direct
     case inDirect
@@ -100,10 +109,13 @@ public class TestAccountList: NSObject {
      public init(_ accountType:AccountType){
         super.init()
         self.accountType=accountType;
+        setup();
         update();
         buildVersionUpdate();
     }
-
+    func setup(){
+        let tempLocalFolderUrl:URL? = FileManager.default.createFolder(folderName:self.folderName);
+    }
     private func showAsAlert(_ fetchType:FetchType, _ title:((TestAccountObject)->String)? = nil,selectedObject:@escaping (TestAccountObject)->Void){
         let alertViewController:UIAlertController = UIAlertController.init(title:"ChooseAccount".customLocalize_, message:"Choose".customLocalize_, preferredStyle: UIAlertController.Style.actionSheet);
         
@@ -163,6 +175,7 @@ extension TestAccountList{
                     default:
                     break;
                 }
+                self.clear();
                 UserDefaults.standard.savedBuildVersion=BuildVersion
                 }
             }
@@ -191,7 +204,7 @@ extension TestAccountList{
         return []
     }
     func savedListURL(key:String)->URL?{
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+        if let dir = folderURL{
         let fileURL = dir.appendingPathComponent(key)
         return fileURL;
         }
@@ -269,7 +282,20 @@ extension TestAccountList{
         }
         self.write(savedObjects: inDirectObjects ?? [], key: self.lastChooseKey)
     }
+    // use for indirect only
     open func clear(){
+        do {
+            if let folderURL:URL=folderURL{
+            // Check if file exists
+                if FileManager.default.fileExists(atPath:folderURL.path) {
+                // Delete file
+                try? FileManager.default.removeItem(atPath:folderURL.path)
+            } else {
+                print("File does not exist")
+            }
+        }
+        }
+        let tempLocalFolderUrl:URL? = FileManager.default.createFolder(folderName:self.folderName);
         let inDirectObjects = self.fetchInDirect();
         self.write(savedObjects: inDirectObjects ?? [], key: self.lastChooseKey)
     }

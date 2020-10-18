@@ -66,6 +66,7 @@ open class AlertView: UIView {
         tableView.dataSource=self;
         layoutConstraintHeightOfTableView.constant = UIScreen.main.bounds.height*0.6;
         self.searchBar.autocapitalizationType = .none;
+        self.searchBar.placeholder="Search".customLocalize_;
     }
     func search(){
         if self.searchBar.text?.count == 0 {
