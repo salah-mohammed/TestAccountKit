@@ -217,7 +217,7 @@ extension TestAccountList{
      }
     func update(){
         var inDirectObjects = self.fetchInDirect();
-        var directObjects = self.fetchDirect()
+        let directObjects = self.fetchDirect()
         
         if inDirectObjects?.count == 0 {
             inDirectObjects=directObjects;
