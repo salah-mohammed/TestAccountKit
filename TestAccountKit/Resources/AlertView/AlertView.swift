@@ -11,14 +11,17 @@ import UIKit
 
 
 open class AlertView: UIView {
+     @IBOutlet open weak var layoutConstraintHeightOfTableView: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
     @IBOutlet var contentView: UIView!
+    var alertController:UIAlertController?
     var items:[TestAccountObject]=[TestAccountObject]();
     var list:TestAccountList?
     var fetchType:TestAccountList.FetchType = .direct
-    var selectedObject:((TestAccountObject)->Void)?
+    var accountType:TestAccountList.AccountType = .development;
+    var selectedHandler:SelectedHandler?
+    var titleHandler:TitleHandler?
     open override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -27,7 +30,19 @@ open class AlertView: UIView {
         super.init(frame: frame)
 //        configureXib()
     }
-    
+    func update(_ accountType:TestAccountList.AccountType,
+                _ fetchType:TestAccountList.FetchType,
+                _ titleHandler:TitleHandler?,
+                _ selectedHandler:SelectedHandler?,
+                _ alertController:UIAlertController?){
+        self.accountType=accountType;
+        self.titleHandler=titleHandler;
+        self.selectedHandler=selectedHandler
+        self.fetchType=fetchType;
+        self.alertController=alertController;
+        list = TestAccountList.init(self.accountType);
+        search();
+    }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -49,8 +64,8 @@ open class AlertView: UIView {
         searchBar.delegate=self;
         tableView.delegate=self;
         tableView.dataSource=self;
-        list = TestAccountList.init(.development);
-        search();
+        layoutConstraintHeightOfTableView.constant = UIScreen.main.bounds.height*0.6;
+        self.searchBar.autocapitalizationType = .none;
     }
     func search(){
         if self.searchBar.text?.count == 0 {
@@ -66,20 +81,26 @@ extension AlertView:UITableViewDelegate,UITableViewDataSource {
         return self.items.count;
     }
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       var cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath);
-        cell.backgroundView?.backgroundColor=UIColor.clear;
+       let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath);
         cell.contentView.backgroundColor=UIColor.clear;
+        cell.backgroundColor=UIColor.clear;
 
         var object = items[indexPath.row];
-        cell.textLabel?.text=object.email;
+        cell.textLabel?.text=titleHandler?(object) ?? object.email;
+        cell.textLabel?.textAlignment = .center;
+        cell.textLabel?.textColor=UIColor.systemBlue;
+        cell.textLabel?.font=UIFont.systemFont(ofSize: 19, weight: .regular);
         return cell;
     }
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var object = items[indexPath.row];
-        selectedObject?(object);
+        selectedHandler?(object);
         self.list?.saveCoosedItem(object);
+        self.alertController?.dismiss(animated: true, completion: nil);
     }
-
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       return 50;
+    }
 }
 extension AlertView:UISearchBarDelegate{
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

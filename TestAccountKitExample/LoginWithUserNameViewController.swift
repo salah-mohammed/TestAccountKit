@@ -23,9 +23,9 @@ class LoginWithUserNameViewController: UIViewController {
     @IBAction func btnLogin(_ sender: Any) {
            #if DEBUG
                if (self.txtUserName.text ?? "").count == 0 {
-                UIAlertController.showAsAlert(TestAccountList.FetchType.inDirect,{ (item) -> String in
+                UIAlertController.show(.development, TestAccountList.FetchType.inDirect,{ (item) -> String in
                     return "(\(item.accountDescription ?? "")) \(item.username ?? "")"
-                }, selectedObject: { object in
+                }, selectedHandler: { object in
         self.txtUserName.text=object.username
         self.txtPassword.text=object.password
 

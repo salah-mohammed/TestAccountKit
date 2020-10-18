@@ -10,6 +10,8 @@ import UIKit
 
 public typealias SelectedHandler = (TestAccountObject)->Void
 public typealias BindingHandler = (TestAccountObject,AccountTableViewCell)->Void
+public typealias TitleHandler = ((TestAccountObject)->String)
+
 public class TestAccountsViewController: UIViewController,UITextFieldDelegate {
   
     var selectedHandler:SelectedHandler?

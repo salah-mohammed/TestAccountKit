@@ -98,16 +98,9 @@ public class TestAccountList: NSObject {
         self.accountType=accountType;
         update();
     }
-    public func showAsAlert(_ fetchType:FetchType, _ title:((TestAccountObject)->String)? = nil,selectedObject:@escaping (TestAccountObject)->Void){
-        let alertViewController:UIAlertController = UIAlertController.init(title:"\n", message:"\n", preferredStyle: UIAlertController.Style.actionSheet);
+    private func showAsAlert(_ fetchType:FetchType, _ title:((TestAccountObject)->String)? = nil,selectedObject:@escaping (TestAccountObject)->Void){
+        let alertViewController:UIAlertController = UIAlertController.init(title:"ChooseAccount".customLocalize_, message:"Choose".customLocalize_, preferredStyle: UIAlertController.Style.actionSheet);
         
-        let customView = UISearchBar.init();
-        customView.backgroundColor=UIColor.clear;
-        customView.barTintColor=UIColor.clear;
-        customView.setSearchFieldBackgroundImage(nil, for: .normal);
-        customView.searchBarStyle = .minimal
-        alertViewController.view.addSubview(customView)
-//        alertViewController.view.subviews[0].addSubview(customView);
         for object in self.fetch(fetchType:fetchType) ?? []{
             alertViewController.addAction(UIAlertAction.init(title:title?(object) ?? "(\(object.accountDescription ?? "")) \(object.email ?? "")", style: .default, handler: { (action) in
                 selectedObject(object);
@@ -118,82 +111,33 @@ public class TestAccountList: NSObject {
             alertViewController.dismiss(animated: false, completion: nil);
         }))
     (UIApplication.shared.windows.first?.rootViewController as? UIViewController)?.present(alertViewController, animated: true, completion:{
-        customView.frame = CGRect(x: 10, y: 0, width: alertViewController.view.frame.width-20, height: 60)
     });
     }
 
 }
-//class Manager:NSObject{
-//    var items:[TestAccountObject]=[TestAccountObject]();
-//    var list:TestAccountList?
-//    var fetchType:TestAccountList.FetchType = .direct
-//    var searchBar:UISearchBar?
-//    var alertController:UIAlertController?
-//    var title:((TestAccountObject)->String)? = nil
-//    init(_ accountType:TestAccountList.AccountType,_ fetchType:TestAccountList.FetchType,alertController:UIAlertController,searchBar:UISearchBar) {
-//        super.init();
-//        self.fetchType=fetchType;
-//        self.alertController=alertController;
-//        self.searchBar=searchBar;
-//        self.list=TestAccountList.init(accountType);
-//    }
-//    func search(){
-//        if self.searchBar?.text?.count == 0 {
-//        self.items = self.list?.fetch(fetchType:fetchType) ?? [];
-//        }else{
-//        self.items = self.list?.fetch(fetchType:fetchType)?.filter(txt: self.searchBar?.text ?? "") ?? []
-//        }
-//        self.reloadData();
-//    }
-//    func reloadData(){
-//        alertController?.actions.removeAll();
-//        for object in items ?? []{
-//            alertController?.addAction(UIAlertAction.init(title:self.title?(object) ?? "(\(object.accountDescription ?? "")) \(object.email ?? "")", style: .default, handler: { (action) in
-////                self.list?.selectedObject(object);
-//                self.list?.saveCoosedItem(object);
-//                }))
-//            }
-//        self.alertController?.addAction(UIAlertAction.init(title:"Cancel".customLocalize_, style:.cancel, handler: { (alertAction) in
-//                self.alertController?.dismiss(animated: false, completion: nil);
-//            }))
-//    }
-//}
 extension UIAlertController{
-//    public func showAsAlerts(_ fetchType:TestAccountList.FetchType, _ title:((TestAccountObject)->String)? = nil,selectedObject:@escaping (TestAccountObject)->Void){
-//            let alertViewController:UIAlertController = UIAlertController.init(title:"\n", message:"\n", preferredStyle: UIAlertController.Style.actionSheet);
-//            let customView = UISearchBar.init();
-//        var manager = Manager(TestAccountList.AccountType.development,fetchType, alertController: alertViewController, searchBar: customView);
-//
-//            customView.backgroundColor=UIColor.clear;
-//            customView.barTintColor=UIColor.clear;
-//            customView.setSearchFieldBackgroundImage(nil, for: .normal);
-//            customView.searchBarStyle = .minimal
-//            alertViewController.view.addSubview(customView)
-//        for object in manager.list?.fetch(fetchType:fetchType) ?? []{
-//                alertViewController.addAction(UIAlertAction.init(title:title?(object) ?? "(\(object.accountDescription ?? "")) \(object.email ?? "")", style: .default, handler: { (action) in
-//                    selectedObject(object);
-//                    manager.list?.saveCoosedItem(object);
-//                }))
-//            }
-//            alertViewController.addAction(UIAlertAction.init(title:"Cancel".customLocalize_, style:.cancel, handler: { (alertAction) in
-//                alertViewController.dismiss(animated: false, completion: nil);
-//            }))
-//        (UIApplication.shared.windows.first?.rootViewController as? UIViewController)?.present(alertViewController, animated: true, completion:{
-//            customView.frame = CGRect(x: 10, y: 0, width: alertViewController.view.frame.width-20, height: 60)
-//        });
-//        }
     
-    public static func showAsAlert(_ fetchType:TestAccountList.FetchType, _ title:((TestAccountObject)->String)? = nil,selectedObject:@escaping (TestAccountObject)->Void){
-            let alertViewController:UIAlertController = UIAlertController.init(title:"\n\n\n\n\n\n\n\n\n\n", message:"\n\n\n\n\n", preferredStyle: UIAlertController.Style.actionSheet);
+    public static func show(_ accountType:TestAccountList.AccountType ,
+                            _ fetchType:TestAccountList.FetchType,
+                            _ title:TitleHandler? = nil,
+                            selectedHandler:SelectedHandler?){
+            let alertController:UIAlertController = UIAlertController.init(title:"\n\n\n\n\n\n\n\n\n\n\n\n", message:"\n\n\n\n\n", preferredStyle: UIAlertController.Style.actionSheet);
         var customView = AlertView.instanceFromNib();
+        customView.update(accountType, fetchType, title, selectedHandler,alertController);
+        let parent = alertController.view.subviews[0].subviews[0];
+        parent.addSubview(customView)
         
-            alertViewController.view.addSubview(customView)
+        customView.translatesAutoresizingMaskIntoConstraints = false
 
-            alertViewController.addAction(UIAlertAction.init(title:"Cancel".customLocalize_, style:.cancel, handler: { (alertAction) in
-                alertViewController.dismiss(animated: false, completion: nil);
+        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .trailing, relatedBy: .equal, toItem: parent, attribute: .trailing, multiplier: 1, constant: 0))
+        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .leading, relatedBy: .equal, toItem: parent, attribute: .leading, multiplier: 1, constant: 0))
+        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .top, relatedBy: .equal, toItem: parent, attribute: .top, multiplier: 1, constant: 0))
+        parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .bottom, relatedBy: .equal, toItem: parent, attribute: .bottom, multiplier: 1, constant: 0))
+        
+            alertController.addAction(UIAlertAction.init(title:"Cancel".customLocalize_, style:.cancel, handler: { (alertAction) in
+                alertController.dismiss(animated: false, completion: nil);
             }))
-        (UIApplication.shared.windows.first?.rootViewController as? UIViewController)?.present(alertViewController, animated: true, completion:{
-            customView.frame = CGRect(x: 10, y: 0, width: alertViewController.view.frame.width-20, height: 250)
+        (UIApplication.shared.windows.first?.rootViewController as? UIViewController)?.present(alertController, animated: true, completion:{
         });
         }
 }
