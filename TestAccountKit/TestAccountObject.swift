@@ -40,6 +40,9 @@ public class TestAccountObject: NSObject {
         
     }
      func isEqual(_ object: TestAccountObject?) -> Bool{
+        if object?.id == nil || self.id == nil {
+        return false;
+        }else
         if  self.id==object?.id{
         return true;
         }
@@ -83,6 +86,9 @@ public class TestAccountObject: NSObject {
 
     }
     func isUpdated(_ newObject:TestAccountObject)->Bool{
+        if newObject.id == nil && self.id == nil {
+            return false;
+        }else
         if (newObject.id == self.id){
             if accountDescription != newObject.accountDescription ||
              username != newObject.username ||

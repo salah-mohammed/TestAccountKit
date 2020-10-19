@@ -57,9 +57,10 @@ public class TestAccountList: NSObject {
         case .direct:
             return self.fetchDirect()
         case .inDirect:
-            return self.fetchInDirect()?.sorted(by: { (first, second) -> Bool in
+            var a = self.fetchInDirect()?.sorted(by: { (first, second) -> Bool in
                 return first.order ?? -1 > second.order ?? -1
-            })
+            });
+            return a
         }
     }
    private func fetchDirect()->[TestAccountObject]?{
@@ -155,12 +156,16 @@ extension TestAccountList{
     }
     open func saveCoosedItem(_ item:TestAccountObject){
         var saved = self.loaddSavedObjects(key: self.lastChooseKey)
+        let beforeRemove = saved.count;
         saved.removeAll { (object) -> Bool in
             return object.isEqual(item)
         }
+        let afterRemove = saved.count;
+        if beforeRemove != afterRemove {
         item.order = saved.lastOrder + 1;
         saved.append(item)
         self.write(savedObjects: saved, key: self.lastChooseKey);
+        }
     }
     func loaddSavedObjects(key:String)->[TestAccountObject]{
         return self.loadd(key:key)?.map({ (item) -> TestAccountObject in
@@ -203,22 +208,28 @@ extension TestAccountList{
         
         if inDirectObjects?.count == 0 {
             inDirectObjects=directObjects;
-        }else{
+        }else
+        if let item:TestAccountObject=inDirectObjects?.filter({ (item) -> Bool in
+             return item.id == nil
+         }).first{
+            inDirectObjects=directObjects;
+         }
+        else{
         // when update data
-        for item in directObjects ?? []{
+        for directObject in directObjects ?? []{
             // when add new item
-            if inDirectObjects?.isContains(item) == false {
-            inDirectObjects?.append(item)
+            if inDirectObjects?.isContains(directObject) == false {
+            inDirectObjects?.append(directObject)
             }
-            if let internalItem:TestAccountObject = inDirectObjects?.isUpdated(item){
-                internalItem.update(newObject:item);
+            if let internalItem:TestAccountObject = inDirectObjects?.isUpdated(directObject){
+                internalItem.update(newObject:directObject);
             }
         }
-        for inDirectItem in inDirectObjects ?? []{
+        for inDirectObject in inDirectObjects ?? []{
             // when remove item
-            if directObjects?.isContains(inDirectItem) == false {
+            if directObjects?.isContains(inDirectObject) == false {
                 inDirectObjects?.removeAll(where: { (item) -> Bool in
-                    inDirectItem == item
+                    inDirectObject.id == item.id
                 });
             }
         }
