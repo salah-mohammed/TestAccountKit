@@ -14,7 +14,7 @@ TestAccountKit used for manage your accounts that used for login to your system 
 * The system can be used if the login screen by username or email or phonenumber.
 * Configuration is too easy.
 * You can Search By phoneNumber or by password or by username or by email or by account description.
-* When use .indirect , last item you choose it appear at top(Sorted by The last item was selected) sorting depend on id You must enter id in plist .
+* When use .indirect , last item you choose it appear at top(Sorted by The last item was selected) sorting depend on id You must enter id in plist, if one account dosent have id sorting will not work .
 * When use .direct , the accounts will appear from plist data with out sort by selection.
 
 # Requirements
