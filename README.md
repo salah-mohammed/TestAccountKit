@@ -8,14 +8,13 @@ TestAccountKit used for manage your accounts that used for login to your system 
 
 # Where Can Use TestAccountKit
 * This tool build for login in debug to make it easier for the programmer to login to the system .
+* Don't write your account in login screen to enter to your system, you can choose it from saved list.
 
 # Advantages
 * The system can be used if the login screen by username or email or phonenumber.
 * You can Search By phoneNumber or by password or by username or by email or by account description.
 * When use .indirect , last item you choose it appear at top(Sorted by The last item was selected) sorting depend on id You must enter id in plist, if one account doesn't have id The Sorting will not work .
 * When use .direct , the accounts will appear from plist data with out sort by selection.
-* Configuration is too easy.
-* Don't write your account in login screen to enter to your system, you can choose it from saved list.
 
 # Requirements
 * IOS 13+ 
