@@ -243,7 +243,7 @@ extension TestAccountList{
             // Check if file exists
                 if FileManager.default.fileExists(atPath:folderURL.path) {
                 // Delete file
-                try? FileManager.default.removeItem(atPath:folderURL.path)
+                try? FileManager.default.removeItem(at:folderURL);
             } else {
                 print("File does not exist")
             }
