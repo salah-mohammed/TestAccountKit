@@ -121,6 +121,8 @@ extension TestAccountList{
                 }
                 self.clear();
                 UserDefaults.standard.savedBuildVersion=BuildVersion
+                }else{
+                    
                 }
             }
         }
@@ -250,7 +252,7 @@ extension TestAccountList{
         }
         }
         let tempLocalFolderUrl:URL? = FileManager.default.createFolder(folderName:self.folderName);
-        let inDirectObjects = self.fetchInDirect();
+        let inDirectObjects = self.fetchDirect();
         self.write(savedObjects: inDirectObjects ?? [], key: self.lastChooseKey)
     }
 }
