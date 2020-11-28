@@ -119,15 +119,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E5BEDA9253B3693001B9278 /* AlertView */ = {
-			isa = PBXGroup;
-			children = (
-				4E5BEDAA253B3693001B9278 /* AlertView.xib */,
-				4E5BEDAB253B3693001B9278 /* AlertView.swift */,
-			);
-			path = AlertView;
-			sourceTree = "<group>";
-		};
 		4E6ECD7E24F6887700225EBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				4E5BB9DC2535D503001C5337 /* TestAccount.storyboard */,
-				4E5BEDA9253B3693001B9278 /* AlertView */,
+				4E5BEDAA253B3693001B9278 /* AlertView.xib */,
 				4E5BB9DD2535D534001C5337 /* Localizable.strings */,
 				4E5BB9D42535D2A9001C5337 /* Assets.xcassets */,
 				4EBA8BD824FC25EE002718D5 /* Info.plist */,
@@ -177,6 +168,7 @@
 				4EF3339E24CEE04600A547FD /* TestAccountObject.swift */,
 				4E5BB9D62535D3C5001C5337 /* TestAccountsViewController.swift */,
 				4E5BB9D22535D215001C5337 /* AccountTableViewCell.swift */,
+				4E5BEDAB253B3693001B9278 /* AlertView.swift */,
 				4EBA8BD724FC25EE002718D5 /* Resources */,
 			);
 			path = TestAccountKit;
