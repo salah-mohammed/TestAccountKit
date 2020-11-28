@@ -13,7 +13,7 @@ extension Bundle{
 }
 extension String{
      var customLocalize_ : String {
-        return NSLocalizedString(self, tableName: nil, bundle:Bundle(for: TestAccountObject.self) ?? Bundle.main, value: "", comment: "")
+        return NSLocalizedString(self, tableName: nil, bundle:FrameWorkConstants.frameWorkBundle ?? Bundle.main, value: "", comment: "")
     }
      func bs_replace(target: String, withString: String) -> String {
         
@@ -156,3 +156,12 @@ extension UIAlertController{
         }
 }
 
+extension Bundle{
+    class var framwWorkBundle:Bundle?{
+        let podBundle = Bundle(for: TestAccountsViewController.self)
+        if let bundleURL:URL = podBundle.url(forResource: "TestAccount", withExtension: "storyboard"){
+        return Bundle(url: bundleURL)
+        }
+        return nil;
+    }
+}

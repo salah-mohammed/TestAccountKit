@@ -60,8 +60,9 @@ public class TestAccountsViewController: UIViewController,UITextFieldDelegate {
     }
 
     public static func initPicker(_ accountType:TestAccountList.AccountType,fetchType:TestAccountList.FetchType,selectedHandler:@escaping SelectedHandler,bindingHandler:@escaping BindingHandler)->TestAccountsViewController?{
-            if let storyboard:UIStoryboard = UIStoryboard.init(name: "TestAccount", bundle:Bundle(for: TestAccountsViewController.self)),
-                let vc = storyboard.instantiateViewController(withIdentifier:"TestAccountsViewController") as? TestAccountsViewController{
+        FrameWorkConstants.frameWorkBundle = Bundle.framwWorkBundle;
+        let storyboard:UIStoryboard = UIStoryboard.init(name: "TestAccount", bundle:FrameWorkConstants.frameWorkBundle)
+            if let vc = storyboard.instantiateViewController(withIdentifier:"TestAccountsViewController") as? TestAccountsViewController{
                 vc.accountType=accountType;
                 vc.fetchType=fetchType;
                 vc.selectedHandler=selectedHandler;

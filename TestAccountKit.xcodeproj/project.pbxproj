@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E5363812572F3CD00E5DA37 /* FrameWorkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5363802572F3CD00E5DA37 /* FrameWorkConstants.swift */; };
 		4E5BB9D32535D215001C5337 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BB9D22535D215001C5337 /* AccountTableViewCell.swift */; };
 		4E5BB9D52535D2AA001C5337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E5BB9D42535D2A9001C5337 /* Assets.xcassets */; };
 		4E5BB9D72535D3C5001C5337 /* TestAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BB9D62535D3C5001C5337 /* TestAccountsViewController.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4E5363802572F3CD00E5DA37 /* FrameWorkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameWorkConstants.swift; sourceTree = "<group>"; };
 		4E5BB9D22535D215001C5337 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		4E5BB9D42535D2A9001C5337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E5BB9D62535D3C5001C5337 /* TestAccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAccountsViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				4EF3337D24CEDFB500A547FD /* TestAccountKit.h */,
+				4E5363802572F3CD00E5DA37 /* FrameWorkConstants.swift */,
 				4E5BB9E12535D638001C5337 /* TestAccountKitEx.swift */,
 				4EF3339D24CEE04600A547FD /* TestAccountList.swift */,
 				4EF3339E24CEE04600A547FD /* TestAccountObject.swift */,
@@ -369,6 +372,7 @@
 				4E5BB9D72535D3C5001C5337 /* TestAccountsViewController.swift in Sources */,
 				4EF333A024CEE04600A547FD /* TestAccountList.swift in Sources */,
 				4E5BB9E22535D638001C5337 /* TestAccountKitEx.swift in Sources */,
+				4E5363812572F3CD00E5DA37 /* FrameWorkConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
