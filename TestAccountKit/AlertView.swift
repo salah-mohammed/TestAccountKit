@@ -50,7 +50,7 @@ open class AlertView: UIView {
     }
     class func instanceFromNib() -> AlertView {
         
-        let myView = Bundle(for: TestAccountsViewController.self).loadNibNamed("AlertView", owner: nil, options: nil)![0] as! AlertView
+        let myView = FrameWorkConstants.frameWorkBundle?.loadNibNamed("AlertView", owner: nil, options: nil)![0] as! AlertView
         myView.configureXib()
         return myView;
         
