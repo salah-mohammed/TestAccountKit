@@ -96,6 +96,9 @@ Pod::Spec.new do |s|
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+    s.resource_bundles = {
+    'TestAccountKit' => ['TestAccountKit/Resources/**/*.{xib,xcassets,json,imageset,bundle,strings,storyboard}','TestAccountKit/View/*.{lproj,storybard}']
+  }
   #
   #  A list of resources included with the Pod. These are copied into the
   #  target bundle with a build phase script. Anything else will be cleaned.
