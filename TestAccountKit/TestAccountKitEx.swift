@@ -160,7 +160,7 @@ extension UIAlertController{
 extension Bundle{
     class var framwWorkBundle:Bundle?{
         let podBundle = Bundle(for: TestAccountsViewController.self)
-        if let bundleURL:URL = podBundle.url(forResource: "TestAccount", withExtension: "storyboard"){
+        if let bundleURL:URL = podBundle.url(forResource: "TestAccountKit", withExtension: "bundle"){
         return Bundle(url: bundleURL)
         }
         return nil;
