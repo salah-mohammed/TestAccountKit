@@ -134,7 +134,7 @@ extension UIAlertController{
     public static func show(_ accountType:TestAccountList.AccountType ,
                             _ fetchType:TestAccountList.FetchType,
                             _ title:TitleHandler? = nil,
-                            selectedHandler:SelectedHandler?){
+                            selectedHandler:SelectedHandler?,_ parentViewController:UIViewController? = UIApplication.shared.windows.first?.rootViewController){
             let alertController:UIAlertController = UIAlertController.init(title:"\n\n\n\n\n\n\n\n\n\n\n\n", message:"\n\n\n\n\n", preferredStyle: UIAlertController.Style.actionSheet);
         FrameWorkConstants.frameWorkBundle = Bundle.framwWorkBundle;
         var customView = AlertView.instanceFromNib();
@@ -152,7 +152,7 @@ extension UIAlertController{
             alertController.addAction(UIAlertAction.init(title:"Cancel".customLocalize_, style:.cancel, handler: { (alertAction) in
                 alertController.dismiss(animated: false, completion: nil);
             }))
-        (UIApplication.shared.windows.first?.rootViewController as? UIViewController)?.present(alertController, animated: true, completion:{
+        parentViewController?.present(alertController, animated: true, completion:{
         });
         }
 }
