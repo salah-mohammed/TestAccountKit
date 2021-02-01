@@ -95,9 +95,10 @@ extension AlertView:UITableViewDelegate,UITableViewDataSource {
     }
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var object = items[indexPath.row];
-        selectedHandler?(object);
         self.list?.saveCoosedItem(object);
-        self.alertController?.dismiss(animated: true, completion: nil);
+        self.alertController?.dismiss(animated: true, completion: {
+            self.selectedHandler?(object);
+        });
     }
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        return 50;
