@@ -28,12 +28,12 @@ class LoginWithUserNameWithCustomePlistViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func btnLogin(_ sender: Any) {
+    @IBAction func btnLogin(_ sender: UIButton) {
            #if DEBUG
                 
                if (self.txtUserName.text ?? "").count == 0 {
             
-               UIAlertController.show(.plistName("CustomTestAccountListDevelopment"),TestAccountList.FetchType.direct,{ (item) -> String in
+               UIAlertController.show(sender,.plistName("CustomTestAccountListDevelopment"),TestAccountList.FetchType.direct,{ (item) -> String in
                         return "(\(item.accountDescription ?? "")) \(item.username ?? "")"
                        }, selectedHandler: { object in
                self.txtUserName.text=object.username

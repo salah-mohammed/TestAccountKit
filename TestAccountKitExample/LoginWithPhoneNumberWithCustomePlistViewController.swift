@@ -16,11 +16,11 @@ class LoginWithPhoneNumberWithCustomePlistViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    @IBAction func btnLogin(_ sender: Any) {
+    @IBAction func btnLogin(_ sender: UIButton) {
            #if DEBUG
                if (self.txtPhoneNumber.text ?? "").count == 0 {
                 
-                UIAlertController.show(.plistStringURL(Bundle.main.path(forResource:"CustomTestAccountListDevelopment", ofType: "plist")!),TestAccountList.FetchType.direct,{ (item) -> String in
+                UIAlertController.show(sender,.plistStringURL(Bundle.main.path(forResource:"CustomTestAccountListDevelopment", ofType: "plist")!),TestAccountList.FetchType.direct,{ (item) -> String in
                     return "(\(item.accountDescription ?? "")) \(item.phoneNumber ?? "")"
                 }, selectedHandler:  { object in
                                self.txtPhoneNumber.text = object.phoneNumber ?? "";

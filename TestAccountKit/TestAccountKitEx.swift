@@ -131,7 +131,7 @@ extension UserDefaults{
 
 extension UIAlertController{
     
-    public static func show(_ accountType:TestAccountList.AccountType ,
+    public static func show(_ senderView:UIView,_ accountType:TestAccountList.AccountType ,
                             _ fetchType:TestAccountList.FetchType,
                             _ title:TitleHandler? = nil,
                             selectedHandler:SelectedHandler?,_ parentViewController:UIViewController? = UIApplication.shared.windows.first?.rootViewController){
@@ -149,9 +149,12 @@ extension UIAlertController{
         parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .top, relatedBy: .equal, toItem: parent, attribute: .top, multiplier: 1, constant: 0))
         parent.addConstraint(NSLayoutConstraint(item: customView, attribute: .bottom, relatedBy: .equal, toItem: parent, attribute: .bottom, multiplier: 1, constant: 0))
         
-            alertController.addAction(UIAlertAction.init(title:"Cancel".customLocalize_, style:.cancel, handler: { (alertAction) in
-                alertController.dismiss(animated: false, completion: nil);
+        alertController.addAction(UIAlertAction.init(title:"Cancel".customLocalize_, style:.cancel, handler: { (alertAction) in
+            alertController.dismiss(animated: false, completion: nil);
             }))
+        var popPresenter:UIPopoverPresentationController? = alertController.popoverPresentationController
+        popPresenter?.sourceView = senderView;
+        popPresenter?.sourceRect = senderView.bounds;
         parentViewController?.present(alertController, animated: true, completion:{
         });
         }
