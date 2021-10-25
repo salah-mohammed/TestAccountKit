@@ -23,7 +23,7 @@ class LoginWithEmailViewController: UIViewController {
     @IBAction func btnLogin(_ sender: UIButton) {
            #if DEBUG
                if (self.txtEmail.text ?? "").count == 0 {
-                UIAlertController.show(sender,.development,TestAccountList.FetchType.direct,selectedHandler: { object in
+                UIAlertController.showTestAccounts(sender,.development,TestAccountList.FetchType.direct,selectedHandler: { object in
                     self.txtEmail.text = object.email ?? "";
                     self.txtPassword.text = object.password ?? "";
                     self.login()

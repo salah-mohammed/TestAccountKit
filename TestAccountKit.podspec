@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TestAccountKit"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "TestAccountKit use UIPageViewController to make slider this maker build slider easy"
 
   # This description is used to generate tags and improve search results.

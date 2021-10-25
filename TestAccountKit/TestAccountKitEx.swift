@@ -131,7 +131,7 @@ extension UserDefaults{
 
 extension UIAlertController{
     
-    public static func show(_ senderView:UIView,_ accountType:TestAccountList.AccountType ,
+    public static func showTestAccounts(_ senderView:UIView,_ accountType:TestAccountList.AccountType ,
                             _ fetchType:TestAccountList.FetchType,
                             _ title:TitleHandler? = nil,
                             selectedHandler:SelectedHandler?,_ parentViewController:UIViewController? = UIApplication.shared.windows.first?.rootViewController){

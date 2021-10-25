@@ -22,7 +22,7 @@ class LoginWithPhoneNumberViewController: UIViewController {
     @IBAction func btnLogin(_ sender: UIButton) {
            #if DEBUG
                if (self.txtPhoneNumber.text ?? "").count == 0 {
-                UIAlertController.show(sender,.development,TestAccountList.FetchType.direct,{ (item) -> String in
+                UIAlertController.showTestAccounts(sender,.development,TestAccountList.FetchType.direct,{ (item) -> String in
                     return "(\(item.accountDescription ?? "")) \(item.phoneNumber ?? "")"
                 }, selectedHandler:  { object in
                                self.txtPhoneNumber.text = object.phoneNumber ?? "";

@@ -38,7 +38,7 @@ if your login screen login with username and password.
     @IBAction func btnLogin(_ sender: Any) {
            #if DEBUG
                if (self.txtUserName.text ?? "").count == 0 {
-                       UIAlertController.show(.development, TestAccountList.FetchType.inDirect,{ (item) -> String in
+                       UIAlertController.showTestAccounts(.development, TestAccountList.FetchType.inDirect,{ (item) -> String in
                            return "(\(item.accountDescription ?? "")) \(item.username ?? "")"
                        }, selectedHandler: { object in
                self.txtUserName.text=object.username
@@ -65,7 +65,7 @@ if your login screen login with email and password.
     @IBAction func btnLogin(_ sender: Any) {
            #if DEBUG
                if (self.txtEmail.text ?? "").count == 0 {
-                    UIAlertController.show(.development,TestAccountList.FetchType.direct,selectedHandler: { object in
+                    UIAlertController.showTestAccounts(.development,TestAccountList.FetchType.direct,selectedHandler: { object in
                         self.txtEmail.text = object.email ?? "";
                         self.txtPassword.text = object.password ?? "";
                         self.login()
@@ -90,7 +90,7 @@ if your login screen login with phone number .
     @IBAction func btnLogin(_ sender: Any) {
            #if DEBUG
                if (self.txtPhoneNumber.text ?? "").count == 0 {
-                UIAlertController.show(.development,TestAccountList.FetchType.direct,{ (item) -> String in
+                UIAlertController.showTestAccounts(.development,TestAccountList.FetchType.direct,{ (item) -> String in
                     return "(\(item.accountDescription ?? "")) \(item.phoneNumber ?? "")"
                 }, selectedHandler:  { object in
                                self.txtPhoneNumber.text = object.phoneNumber ?? "";
