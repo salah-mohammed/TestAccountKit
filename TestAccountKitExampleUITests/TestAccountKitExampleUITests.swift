@@ -27,8 +27,12 @@ class TestAccountKitExampleUITests: XCTestCase {
         // UI tests must launch the application that they test.
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        testEmail()
-        testPhoneNumber();
+//        testEmail()
+//        testPhoneNumber();
+        orderSucess()
+                
+             
+        
     }
     func testEmail(){
         let app = XCUIApplication()
@@ -43,6 +47,32 @@ class TestAccountKitExampleUITests: XCTestCase {
         app.tables.staticTexts["Phone Number"].tap()
         app.buttons["Login"].tap()
         XCTAssertEqual(app.tables.cells.count > 0, true)
+    }
+    // this for check order success 
+    func orderSucess(){
+        let app = XCUIApplication()
+        app.launch()
+        app.tables.staticTexts["Phone Number"].tap()
+        let phonenumberTextField = app.textFields["PhoneNumber"]
+        app.buttons["Login"].tap()
+        let table = app.tables.firstMatch;
+        let cellElement=table.cells.element(boundBy: 2);
+        cellElement.tap();
+        //
+        // remove textfields
+        phonenumberTextField.tap()
+        let deleteKey = app/*@START_MENU_TOKEN@*/.keys["delete"]/*[[".keyboards.keys[\"delete\"]",".keys[\"delete\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        deleteKey/*@START_MENU_TOKEN@*/.press(forDuration: 0.7);/*[[".tap()",".press(forDuration: 0.7);"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        phonenumberTextField.tap()
+        app.staticTexts["Select All"].tap()
+        deleteKey.tap()
+        //
+        app.buttons["Login"].tap()
+        let table2 = app.tables.firstMatch;
+        var value = table2.staticTexts.element(boundBy:0).label
+
+        XCTAssertTrue(value == "(type 3) +972599953505");
+
     }
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
